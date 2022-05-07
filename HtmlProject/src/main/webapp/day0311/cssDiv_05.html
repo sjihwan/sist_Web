@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*
+요소의 display속성
+inline: 한 줄을 차지하지 않음(줄바꿈X)
+block: 한 줄을 차지함(줄바꿈ㅇ)
+ */
+/* 
+주로 css와 연동하여 사용
+div태그: Division의 약자로, 레이아웃을 나누는데 주로 쓰입니다. 
+가상의 레이아웃
+block요소
+span태그: div와 비슷
+inline요소
+ */
+/* span태그에 적용가능한 a클래스 */
+span.a{
+  color: tomato;
+  font-size: 2em;
+  background-color: #7b68ee;
+}
+span.b{
+  border: 5px solid gray;
+  border-radius: 50px;
+  padding: 10px; /* 안쪽 여백 */
+}
+span.c{
+  border: 15px groove magenta;
+  font-size: 20pt;
+}
+span.d{
+  border: 5px dashed #20b2aa;
+  font-size: 12pt;
+}
+div.a{
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 1.4em;
+  text-align: center;
+  border: 5px inset gray;
+}
+div.b{
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 5px dotted orange;
+  background-color: #98fb98;
+  color: white;
+  border-radius: 100px;
+}
+div.c{
+  border: 1px solid gray;
+  padding-left: 20px;
+  margin-top: 20px;
+  width: 200px;
+  font-weight: bold;
+}
+div.d{
+  position: absolute; /* 절대좌표 */
+  left: 500px;
+  top: 100px;
+  font-size: 5em;
+}
+</style>
+</head>
+<body>
+<span class="a">SpanA태그</span>
+<span class="b">SpanB태그</span>
+<span class="c">SpanC태그</span>
+<span class="d">SpanD태그</span>
+
+<div class="a">Div A태그</div>
+<div class="b">Div B태그</div>
+<div class="c">Div C태그</div>
+<div class="d">Div D태그</div>
+</body>
+</html>

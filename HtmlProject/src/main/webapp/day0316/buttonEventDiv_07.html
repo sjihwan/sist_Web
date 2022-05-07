@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#out{
+	position: absolute;
+	left: 20px;
+	top: 100px;
+	background: #e0ffff;
+	padding: 10 10 10 10;
+	width: 300px;
+	height: 150px;
+	border: 1px solid gray; 
+}
+</style>
+<script type="text/javascript">
+function test1(a) {
+	alert(a+100);
+}
+function test2(str) {
+	alert("문자열["+str+"]을 받았어요");
+}
+function test3() {
+	var a=confirm('데이터를 추가할까요?');
+	
+	if(a==1){
+		out.innerHTML='추가했어요';
+	}
+	else{ //(a==0)
+		out.innerHTML='취소했어요';
+	}
+}
+function test4() {
+	var a=prompt("당신의 이름은?");
+	out.innerHTML="저의 이름은 "+a+" 입니다";
+}
+function test5() {
+	/* out.innerHTML="안녕하세요".fontcolor('red'); */
+	var str="<font color='red' size='5'>안녕하세요</font>";
+	out.innerHTML=str;
+}
+
+</script>
+</head>
+<body>
+<input type="button" value="alert_1" onclick="test1(123)">
+<input type="button" value="alert_2" onclick="test2('hello')">
+<input type="button" value="confirm" onclick="test3()">
+<input type="button" value="prompt" onclick="test4()">
+<input type="button" value="click me!!" onclick="test5()">
+
+<div id="out"></div>
+</body>
+</html>

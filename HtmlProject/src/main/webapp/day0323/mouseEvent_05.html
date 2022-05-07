@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h2>마우스를 올리면 이미지가 변경되고 벗어나면 다시 원래대로 변경</h2>
+<img src="../image/c1.png" width="200">
+<img src="../image/c2.png" width="200">
+<img src="../image/c3.png" width="200">
+<script type="text/javascript">
+$("img").mouseover(function(){
+	imgsrc=$(this).attr("src"); //각각 자기자신의 이미지경로를 복사해둠
+	
+	$(this).attr("src", "../image/01.png");
+});
+
+$("img").mouseout(function(){
+	$(this).attr("src", imgsrc);
+});
+</script>
+</body>
+</html>

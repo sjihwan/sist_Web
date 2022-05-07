@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div>div {
+	margin-left: 10px;
+	margin-top: 30px;
+	float: left;
+  	border-radius: 100px;
+  	width: 100px;
+  	height: 100px;
+  	line-height: 100px;
+  	font-size: 3em;
+  	font-family: 'Comic Sans Ms';
+  	font-weight: bold;
+  	text-align: center;
+  	color: white;
+  	box-shadow: 5px 5px 5px gray; /* x,y,blur,색상 */
+}
+
+#one{background-color: #ff69b4}
+#two{background-color: #f0f8ff}
+#three{background-color: #f5f5dc}
+#four{background-color: #e0ffff}
+#five{background-color: #00bfff}
+#six{background-color: #00ff00}
+
+#btnstart,#btnstop{
+	margin-top: 30px;
+	width: 70px;
+	height: 70px;
+	border: 1px solid gray;
+	text-align: center;
+	line-height: 70px;
+	font-size: 17px;
+	font-weight: bold;	
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	//시작버튼 이벤트
+	document.getElementById("btnstart").onclick=function(){
+		var lotto = new Array(6);
+		interval = setInterval(function() {
+			for (var i = 0; i < lotto.length; i++) {
+				lotto[i] = parseInt(Math.random()*45)+1;
+				//중복 나오면 다시 난수 뽑기
+				for (var j = 0; j < i; j++) {
+					if(lotto[j]==lotto[i]){
+						i--;
+						break;
+					}
+				}
+			}
+			one.innerText=lotto[0];
+			two.innerText=lotto[1];
+			three.innerText=lotto[2];
+			four.innerText=lotto[3];
+			five.innerText=lotto[4];
+			six.innerText=lotto[5];
+		}, 100);
+	}
+	
+	//멈춤버튼 이벤트
+	document.getElementById("btnstop").onclick=function(){
+		clearInterval(interval);
+	}
+}
+</script>
+</head>
+<body>
+<div>
+	<div id="one">1</div>
+	<div id="two">1</div>
+	<div id="three">1</div>
+	<div id="four">1</div>
+	<div id="five">1</div>
+	<div id="six">1</div>
+</div>
+<button type="button" id="btnstart">시작</button>
+<button type="button" id="btnstop">멈춤</button>
+</body>
+</html>

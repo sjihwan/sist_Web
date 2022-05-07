@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	// on("click"),click()_차이점은 동적으로 이벤트 바인딩 할 수 있나
+	// on("click")은 동적으로 가능
+	// on메서드는 처음부터 존재하는 것, 미래에 생기게 될 요소 모두 이벤트 가능
+	// click()는 최초에 선언된 element들에만 동작
+	$(".btn2").hide();
+	$(".btn1").on("click",function(){
+		$(".box").slideUp(1000,'linear',function(){
+			$(".btn1").hide();
+			$(".btn2").show();
+		});
+	});
+});
+</script>
+</head>
+<body>
+<p>
+  <button class="btn1">slideUp</button>
+  <button class="btn2">fadeIn</button>
+</p>
+<p>
+  <button class="btn3">toggleSlide</button>
+</p>
+<div class="box">
+  <div class="content">
+  오늘은 즐거운 금요일 입니다...
+  </div>
+</div>
+</body>
+</html>

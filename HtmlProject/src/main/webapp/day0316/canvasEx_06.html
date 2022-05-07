@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+주로 그림을 그리거나 이미지를 올릴수도 있고
+html5로 만든게임 주로 캔바스 기능 이용
+-->
+<script type="text/javascript">
+window.onload=function(){
+	//캔바스 그림을 그리기 위한 작업
+	var can=document.getElementById("can1");
+	//context는 자바스크립트의 Graphics..그림 그리는 메서드 가지고 있다.
+	var context=can.getContext("2d");
+	
+	//선 그리기 위한 준비작업
+	context.lineWidth=5; //굵기
+	context.strokeStyle="red"; //색
+	context.lineCap="round";
+	
+	context.beginPath(); //선 그리기 시작
+	
+	//삼각형
+	//원하는 위치로 이동
+	context.moveTo(10, 10);
+	//선 그리기
+	context.lineTo(100, 10);
+	context.lineTo(50, 100); //여기서 y값은 아래방향으로 증가한다
+	context.lineTo(10, 10); 
+	
+	//실행
+	context.stroke(); //draw path
+	context.closePath(); //선 그리기 끝
+	
+	//사각형
+	context.lineWidth=2;
+	context.strokeStyle="magenta";
+	context.fillStyle="yellow";
+	context.strokeRect(120, 10, 150, 100); //테두리만 있는 사각형 //x,y값은 start_point
+	context.fillRect(300, 10, 150, 100);
+	
+	//글자
+	context.lineWidth=1;
+	context.strokeStyle="gray";
+	context.fillStyle="cyan";
+	context.font="30px Comic Sans MS";
+	
+	context.shadowOffsetX=5;
+	context.shadowOffsetY=5;
+	context.shadowBlur=2;
+	context.shadowColor="gray";
+	context.fillText("Happy", 100, 150)
+	context.strokeText("HTML5", 300, 250) //테두리만 있는 텍스트
+}
+</script>
+</head>
+<body>
+<h2>Canvas 에 그림 그리기</h2>
+<canvas id="can1" width="500" height="500" style="border: 1px solid gray;"></canvas>
+</body>
+</html>

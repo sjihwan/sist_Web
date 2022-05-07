@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<script type="text/javascript">
+//글자색
+function changeColor(font_color){
+	out.style.color=font_color;
+}
+//글자크기
+function changeFontSize(font_size){
+	out.style.fontSize=font_size+"pt";
+}
+//글자굵게
+window.onload=function(){
+	//onclick_마우스 클릭했을 때 -> checked_체크되어있는지 확인
+	document.getElementById("chkbold").onclick=function(){ 
+		if(this.checked)
+			out.style.fontWeight='bold';
+		else
+			out.style.fontWeight='';
+	}
+}
+//글꼴폰트
+function changeFamily(font_family){
+	out.style.fontFamily=font_family;
+}
+//배경색
+function changeBgColor(bg){
+	out.style.background=bg;
+}
+
+</script>
+</head>
+<body>
+<h2>각종 폼태그들 적용</h2>
+
+글자색 변경:<input type="color" value="#ffccff" onchange="changeColor(this.value)">
+<br>
+글자크기 변경:
+<select onchange="changeFontSize(this.value)">
+  <option>15</option>
+  <option>18</option>
+  <option>20</option>
+  <option>24</option>
+  <option>28</option>
+  <option>32</option>
+</select>
+<br>
+굵기 속성:
+<input type="checkbox" id="chkbold">굵게 <!-- 옵션이 하나이므로..checkbox이나 radiobutton이든 상관없음 -->
+<br>
+폰트 선택:
+<!-- 라디오버튼 name을 주어야 버튼그룹에 포함된다 -->
+<input type="radio" name="fam" value="Nanum Myeongjo" onchange="changeFamily(this.value)">글꼴1
+<input type="radio" name="fam" value="Nanum Pen Script" onchange="changeFamily(this.value)">글꼴2
+<input type="radio" name="fam" value="Noto Sans KR" onchange="changeFamily(this.value)">글꼴3
+<br>
+배경색 선택:
+<select onchange="changeBgColor(this.value)" style="width: 100px;">
+  <option value="red">빨강</option>
+  <option value="yellow">노랑</option>
+  <option value="pink">핑크</option>
+  <option value="#e0ffff">하늘색</option>
+  <option value="#ffe4b5">흐린오렌지</option>
+  <option value="#fa8072">연어색</option>
+</select>
+
+<!-- 결과 -->
+<div id="out" style="margin-top: 30px;">재미있는 HTML&CSS&JavaScript!!!</div>
+</body>
+</html>

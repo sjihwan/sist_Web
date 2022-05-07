@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	border: 2px solid gray;
+}
+th, td {
+	border: 1px dotted pink;
+}
+</style>
+<script type="text/javascript">
+function datasend() {
+	opener.frm.name.value=frm.name.value;
+	opener.frm.addr.value=frm.addr.value;
+	opener.frm.hp.value=frm.hp.value;
+	window.close();
+}
+</script>
+</head>
+<body>
+<form action="#" name="frm">
+	<table border="1">
+		<tr>
+		  <th width="100">이름</th>
+		  <td width="200"><input type="text" name="name" required="required" size="12"></td>
+		</tr>
+		<tr>
+		  <th>주소</th>
+		  <td><input type="text" name="addr" required="required" size="20"></td>
+		</tr>
+		<tr>
+		  <th>연락처</th>
+		  <td><input type="text" name="hp" required="required" size="14"></td>
+		</tr>
+		<tr align="center">
+		  <td colspan="2">
+		    <input type="button" value="데이터 전송" onclick="datasend()">
+		  </td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+function check() {
+	if(frm.msg.value==''){
+		alert("메세지를 입력해주세요");
+		frm.msg.focus();
+		return false;
+	}
+}
+function check2(f) {
+	if(f.msg.value==''){
+		alert("메세지를 입력해주세요");
+		frm.msg.focus();
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+<!-- 
+get은 select적인 개념 예를 들어 id에 해당하는 게시판을 읽어올 때 사용되어지고
+post는 게시판에 무언가를 업로드하는 즉, 서버쪽에 어떤 작업을 할 때 쓰여진다고 생각하면 된다.
+-->
+	<h2>폼단위로 전송(Post방식 전달)</h2>
+	<form action="myactionPost_10.jsp" method="post" name="frm"
+		onsubmit="return check()">
+		<b>메세지: </b> <input type="text" name="msg" size="20"><br>
+		<input type="submit" value="전송"> <input type="reset"
+			value="취소">
+	</form>
+	<hr>
+	<h2>폼단위로 전송(Get방식 전달)</h2>
+	<form action="myactionGet_10.jsp" method="get"
+		onsubmit="return check2(this)">
+		<b>메세지: </b> <input type="text" name="msg" size="20"><br>
+		<input type="submit" value="전송"> <input type="reset"
+			value="취소">
+	</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- 
+transform의 단위는 deg,rad,grad,turn 등 사용
+turn은 1회전 360deg..angle에는 각도 입력
+ -->
+</head>
+<body>
+<img alt="" src="../image/c1.png" width="100">
+<img alt="" src="../image/c2.png" width="100">
+<img alt="" src="../image/c3.png" width="100">
+<img alt="" src="../image/c4.png" width="100">
+
+<script type="text/javascript">
+	//hover: mouseover+mouseout
+	//Rotate(+): 오른쪽으로 회전
+	$("img:eq(0)").hover(function(){
+		$(this).css("transform","rotate(180deg)");
+	}, function(){
+		$(this).css("transform","rotate(0deg)");
+	});
+	//(-): 왼쪽으로 회전
+	$("img:eq(1)").hover(function(){
+		$(this).css("transform","rotate(-45deg)");
+	}, function(){
+		$(this).css("transform","rotate(0deg)");
+	});
+	
+	//Scale(가로,세로)_배수로 확대/축소
+	$("img:eq(2)").hover(function(){
+		$(this).css("transform","scale(2,2)");
+	}, function(){
+		$(this).css("transform","scale(1,1)");
+	});
+	
+	//Translate_이동
+	$("img:eq(3)").hover(function(){
+		$(this).css("transform","translate(50px)");
+	}, function(){
+		$(this).css("transform","translate(0px)");
+	});
+</script>
+</body>
+</html>

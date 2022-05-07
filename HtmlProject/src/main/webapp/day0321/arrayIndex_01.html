@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#photo {
+	position: absolute;
+	left: 500px;
+	top: 220px;
+	width: 400px;
+	height: 500px;
+	border: 5px groove gray;
+}
+#btnRandom {
+	margin-left: 400px;
+	width: 80px;
+	height: 80px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	//배열에 여러개의 이미지 넣기
+	imgarr=new Array();
+	imgarr.push("../image/c1.png");
+	imgarr.push("../image/c2.png");
+	imgarr.push("../image/c3.png");
+	imgarr.push("../image/c4.png");
+	imgarr.push("../image/c5.png");
+	imgarr.push("../person/hee.jpg");
+	imgarr.push("../person/park.jpg");
+	imgarr.push("../person/shin.jpg");
+	imgarr.push("../person/soojee.jpg");
+	imgarr.push("../person/you.jpg");
+	
+	//초기이미지를 요소값 얻어서 랜덤하게 넣기
+	photo=document.getElementById("photo");
+	idx=parseInt(Math.random()*10); //0~9
+	photo.setAttribute("src",imgarr[idx]);
+	
+	//꽃이미지 버튼 클릭시_랜덤이미지 나오게
+	document.getElementById("btnRandom").onclick=function(){
+		idx=parseInt(Math.random()*10);
+		photo.setAttribute("src",imgarr[idx]);
+	}
+}
+</script>
+</head>
+<body>
+<input type="image" src="../img/f2.png" id="btnRandom">
+
+<!-- marquee 뜻? 천막 -->
+<marquee width="500" direction="left" behavior="slide"> <!-- 왼쪽(left)으로 슬라이드(slide) -->
+	<img alt="" src="../image/01.png" width="50">
+	<b>왼쪽 버튼을 누르면 이미지가 바뀝니다</b>
+</marquee>
+
+<img id="photo">
+</body>
+</html>

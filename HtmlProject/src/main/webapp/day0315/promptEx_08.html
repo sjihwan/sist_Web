@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	/* var userId=window.prompt("아이디입력","id"); //prompt("사용자에게 보여줄 문자열", "텍스트 입력 필드에 채워 넣을 문자열")
+	
+	if(userId=='angel')
+		document.write(userId+"님 환영합니다");
+	else
+		document.write('다시입력바람'); */
+	
+	/* var num=prompt("숫자입력","0"); //prompt 리턴타입은, String
+	document.write(typeof(num)); */
+	
+	/* var num1=parseInt(prompt("숫자1"));
+	var num2=Number(prompt("숫자2"));
+	var num3=parseInt(prompt("숫자3"));
+	
+	document.write("총합계는"+(num1+num2+num3)); */
+	
+	//prompt에 이름,키를 입력하면 표준몸무게를 출력하게 해보세여
+	//표준몸무게: (키-100)*0.9
+	var name=prompt("이름");
+	document.write("당신의 이름은 "+name+" 입니다<br>");
+	var height=Number(prompt("키"));
+	document.write("당신의 키는 "+height+"cm 입니다<br>");
+	
+	var st_weight=(height-100)*0.9;
+	document.write(name+"님의 표준몸무게는 "+st_weight+"kg 입니다");
+</script>
+</body>
+</html>

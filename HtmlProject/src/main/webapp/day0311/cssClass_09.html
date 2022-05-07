@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+   width: 400px;
+   height: 250px;
+   border: 1px solid black;
+   margin-bottom: 20px;
+   margin-left: 300px;
+}
+body{
+   background-image: url("../img/f2.png");
+   background-repeat: no-repeat;
+   background-position: 800px 200px;
+}
+/* 범용클래스..모든클래스 사용가능 */
+.bg{
+   background-color: #fffacd;
+}
+div.a{
+   background-image: url("../img/flag02.jpg");
+}
+div.b{
+   background-image: url("../img/flag03.jpg");
+   background-repeat: repeat-y;
+}
+div.c{
+   background-image: url("../img/flag01.jpg");
+   background-repeat: repeat-x;
+}
+div.d{
+   background-image: url("../img/flag04.jpg");
+   background-size: 100px 100px;
+   background-repeat: no-repeat;
+   background-position: 100px 100px; /* 위치지정 */
+}
+</style>
+</head>
+<body>
+<div class="a"></div>
+<div class="b bg"></div>
+<div class="c bg"></div>
+<div class="d"></div>
+</body>
+</html>

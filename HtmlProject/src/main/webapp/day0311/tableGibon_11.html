@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.tab1{
+   width: 400px;
+   font-size: 15pt;
+   border: 10px groove gold;
+}
+.tab1 thead tr th{ /* thead 안써도 상관없음 */
+   border-bottom: 3px solid gray;
+   background-color: #e0ffff;
+   color: blue;
+}
+.tab1 td{
+   border-bottom: 1px solid gray;
+   background-color: #ffff77;
+}
+</style>
+</head>
+<body>
+<table border="1">
+   <caption>[표1]</caption>
+   <tr>
+      <td>셀1</td>
+      <td>셀2</td>
+      <td>셀3</td>
+   </tr>
+   <tr>
+      <td>셀4</td>
+      <td>셀5</td>
+      <td>셀6</td>
+   </tr>
+</table>
+
+<hr>
+
+<table class="tab1">
+   <caption>[표2]</caption>
+   <thead> <!-- 안써도 상관없음, Head인걸 표시하기 위해 사용 -->
+      <tr>
+         <th>이름</th>
+         <th>나이</th>
+         <th>주소</th>
+      </tr>
+   </thead>
+   
+   <tbody> <!-- 안써도 상관없음 -->
+      <tr>
+         <td>강호동</td>
+         <td>23</td>
+         <td>서울시 광진구</td>
+      </tr>
+      <tr>
+         <td>유재석</td>
+         <td>33</td>
+         <td>서울시 강남구</td>
+      </tr>
+      <tr>
+         <td>하하</td>
+         <td>45</td>
+         <td>인천시 송도</td>
+      </tr>
+   </tbody>
+</table>
+
+<hr>
+
+<table border="5" style="border-collapse: collapse;">
+   <tr>
+      <th width="100">이름</th>
+      <td width="200"></td>
+      <th width="100">연락처</th>
+      <td width="200"></td>
+   </tr>
+   <tr>
+      <th>주소</th> <!-- 너비width 안줘도됨 -->
+      <td colspan="3"></td>
+   </tr>
+   <tr>
+      <th>자기<br>소개</th>
+      <td colspan="3"></td>
+   </tr>
+</table>
+
+<!-- 테이블Quiz -->
+<table border="1" style="border-collapse: collapse;">
+   <caption>[문제]</caption>
+   <tr height="100">
+      <td rowspan="3" width="200">일</td>
+      <td colspan="3" width="600">이</td>
+   </tr>
+   <tr height="100">
+      <td colspan="2">삼</td>
+      <td rowspan="3">사</td>
+   </tr>
+   <tr height="100">
+      <td>오</td>
+      <td>육</td>
+   </tr>
+   <tr height="100">
+      <td colspan="4">칠</td>
+   </tr>
+</table>
+</body>
+</html>

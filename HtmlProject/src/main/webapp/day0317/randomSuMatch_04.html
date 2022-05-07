@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#out{
+	position: absolute;
+	top: 50px;
+	border: 2px solid gray;
+	width: 300px;
+	height: 200px;
+	padding-left: 10px;
+	padding-top: 10px;
+	background-color: #ffffcc;
+	font-size: 11pt; 
+}
+</style>
+<script type="text/javascript">
+var rnd;
+var cnt=0; //시도횟수...10이상이면 실패
+
+window.onload=function(){
+	rnd=parseInt(Math.random()*100)+1; //1~100난수 발생
+}
+
+function check(su) {
+	//1~100까지만 입력해야 하며 경고창 띄우고 입력창 초기화
+	if(su<=0 || su>100){
+		alert("잘못입력하셨습니다");
+		frm.num.value='';
+		return false; //함수종료
+	}
+	
+	//난수와 비교해서 결과 출력
+	cnt++;
+	if(su>rnd){
+		out.innerHTML+=cnt+" : "+su+"보다 작습니다<br>";
+	}
+	else if(su<rnd){
+		out.innerHTML+=cnt+" : "+su+"보다 큽니다<br>";
+	}
+	else{
+		out.innerHTML="<h4>축하합니다!! 정답은 "+rnd+"입니다</h4><br>";
+		imge.src="../image/chick.gif";
+		return false; //함수종료
+	}
+	
+	//실패...이미지 출력
+	if(cnt>=10){
+		out.innerHTML="<h4>꽝!!!다음 기회에...</h4>";
+		imge.src="../image/image_01.png";
+	}
+}
+</script>
+</head>
+<body>
+	<!-- 입력데이터 서식 -->
+	<!-- <form action="#" name="frm" onsubmit="return false"> -->
+	<form name="frm"> <!-- return false로 하면 action이 실행X -->
+		<b>숫자입력: </b>
+		<!-- 숫자입력후 엔터(keyCode=13) 누르면 check함수호출하면서 value 전달 -->
+		<!-- onkeydown? key가 눌렸을때 이벤트 발생(keyCode,value 반환) -->
+		<input type="text" name="num" size="5" onkeydown="if(event.keyCode==13) check(value)"> 
+	</form>
+	<!-- 결과출력박스 -->
+	<div id="out"></div>
+	<div style="position: absolute; top: 80px; left: 320px;">
+		<img alt="" src="" name="imge">
+	</div>
+</body>
+</html>

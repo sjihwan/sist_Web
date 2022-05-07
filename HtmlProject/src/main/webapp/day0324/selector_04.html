@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<p>오늘 나갈 진도</p>
+<ol>
+  <li>each</li>
+  <li>selector</li>
+  <li>animate</li>
+</ol>
+
+<p>오늘 점심 메뉴?</p>
+<ol>
+  <li>떡라면</li>
+  <li>스테이크</li>
+  <li>부대찌개</li>
+  <li>파스타</li>
+  <li>each정식</li>
+</ol>
+
+<script type="text/javascript">
+$("ol li:first").css("background-color", "gray"); //전체에서 첫번쨰 li
+//$("ol li:first-child").css("background-color", "gray"); //각 ol항목의 첫번째 li
+
+//전체항목에서 each를 찾아서 글자크기를 2배로
+$("li:contains(each)").css("font-size", "2em");
+
+//li의 홀수번지를 찾아서 border지정
+//odd:홀수번지 even:짝수번지
+//전체 li 인덱스 번호(0~) 적용
+$("li:odd").css("border", "2px groove cyan");
+</script>
+</body>
+</html>

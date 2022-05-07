@@ -1,0 +1,19 @@
+@charset "UTF-8";
+#box{
+	background-color: #2f4f4f;
+	width: 800px;
+	height: 500px;
+	color: #ffffff;
+	margin: auto; /* 0 auto를 줘도됨 */
+}
+#box h1{
+	text-align: center;
+	padding-top: 40px;
+}
+#box p{
+	text-align: center;
+}
+#box ul li{
+	padding-left: 200px;
+	list-style: none;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function ok() {
+	alert("예~~ 했습니다");
+}
+function no() {
+	alert("아니오~~ 아직 안했어요");
+}
+function s_confirm() {
+	if(confirm("수강신청했나요?")){ /* confirm(): (확인, 취소) 알림창 */
+		ok();
+	}
+	else
+		no();
+}
+</script>
+</head>
+<body>
+<h2>수강신청을 하셨나요?</h2>
+<form action="#">
+	<fieldset>
+	  <legend>수강신청 확인</legend>
+	  <input type="button" value="예" onclick="ok()">
+	  <input type="button" value="아니오" onclick="no()">
+	</fieldset>
+</form>
+
+<hr>
+<!-- 버튼누르면 수강신청했나요? 라고 뜨고
+확인누르면 네 했어요
+취소누르면 아직 안했어요 -->
+<div>
+	<input type="button" onclick="s_confirm()" value="눌러보세요">
+</div>
+</body>
+</html>

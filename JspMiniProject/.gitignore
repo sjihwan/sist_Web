@@ -1,0 +1,14 @@
+.settings/
+build/
+
+.classpath
+.project
+
+image2/
+image/
+menu/
+META-INF/
+myshopsave/
+save/
+se2/
+WEB-INF/

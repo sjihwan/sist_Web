@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#out {
+	margin-top: 30px;
+}
+#out>.lotto {
+	margin-left: 100px;
+  	margin-top: 30px;
+  	float: left;
+  	border: solid 3px #c71585;
+  	background-color: #db7093;
+  	border-radius: 100px;
+  	width: 100px;
+  	height: 100px;
+  	line-height: 100px;
+  	font-size: 3em;
+  	font-family: 'Comic Sans Ms';
+  	font-weight: bold;
+  	text-align: center;
+  	color: white;
+  	box-shadow: 5px 5px 5px gray; /* x,y,blur,색상 */
+}
+</style>
+</head>
+<body>
+<button type="button" id="btn1">로또 숫자 구하기</button>
+
+<div id="out"></div> <!-- 출력div -->
+<script type="text/javascript">
+/* 출력요소값 변수 out */
+out=document.getElementById("out");
+
+//배열변수 lotto..6개의 공
+lotto=new Array(6);
+
+//버튼이벤트
+document.getElementById("btn1").onclick=function(){
+	//1~45사이 난수값 6개 얻어서 배열에 넣기
+	for (var i=0; i<lotto.length; i++) {
+		lotto[i]=parseInt(Math.random()*45)+1;
+		
+		//중복숫자 나오면 다시 난수 뽑기
+		for (var j=0; j<i; j++) {
+			if(lotto[i]==lotto[j]){
+				i--;
+				break; //지금의 반복문 탈출
+			}
+		}
+	}
+	
+	//정렬하기
+	for (var i=0; i<lotto.length-1; i++) {
+		for (var j=i+1; j<lotto.length; j++) {
+			if(lotto[i]>lotto[j]){ //앞의 수가 더 클 경우 교환
+				temp=lotto[i];
+				lotto[i]=lotto[j];
+				lotto[j]=temp;
+			}
+		}
+	}
+	//console.log(lotto);
+	
+	//출력
+	s="";
+	for (var i = 0; i < lotto.length; i++) {
+		s+="<div class='lotto'>"+lotto[i]+"</div>";
+	}
+	out.innerHTML=s;
+}
+</script>
+</body>
+</html>

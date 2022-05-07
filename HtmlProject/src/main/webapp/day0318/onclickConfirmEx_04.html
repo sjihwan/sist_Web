@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+div img{
+max-width: 150px;
+}
+</style>
+<!-- 
+Q.꽃 버튼을 클릭하면 div에 꽃사진 나오게,과일,스누피 누르면 각각의 이미지
+(주의: 매번 꽃을 출력할까요? 물어보고 예 클릭시에만 이미지가 나오게 하시오)
+ -->
+<script type="text/javascript">
+function buttonOne() {
+	a=confirm("꽃을 출력할까요?");
+	if(a==1){
+		result.innerHTML="<img src='../img/f2.png'>";
+	}
+}
+function buttonTwo() {
+	a=confirm("스누피을 출력할까요?");
+	if(a==1){
+		result.innerHTML="<img src='../img/s4.JPG'>";
+	}
+}
+function buttonThree() {
+	a=confirm("과일을 출력할까요?");
+	if(a==1){
+		result.innerHTML="<img src='../img/f11.png'>";
+	}
+}
+</script>
+</head>
+<body>
+<button type="button" onclick="buttonOne()">꽃</button>
+<button type="button" onclick="buttonTwo()">스누피</button>
+<button type="button" onclick="buttonThree()">과일</button>
+<hr>
+<div id="result"></div>
+</body>
+</html>

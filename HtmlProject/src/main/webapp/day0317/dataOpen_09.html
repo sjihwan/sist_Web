@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function dataopen() {
+	window.open('dataSend.html','w','width=300, height=200');
+}
+</script>
+</head>
+<body>
+<form action="#" name="frm">
+	<table border="1">
+		<tr>
+		  <th width="100">이름</th>
+		  <td width="200"><input type="text" name="name" readonly="readonly" size="12"></td>
+		</tr>
+		<tr>
+		  <th>주소</th>
+		  <td><input type="text" name="addr" readonly="readonly" size="20"></td>
+		</tr>
+		<tr>
+		  <th>연락처</th>
+		  <td><input type="text" name="hp" readonly="readonly" size="14"></td>
+		</tr>
+		<tr align="center">
+		  <td colspan="2">
+		    <input type="button" value="데이터 입력" onclick="dataopen()">
+		  </td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

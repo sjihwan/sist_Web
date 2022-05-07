@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 4번과 같은 문제입니다 -->
+<script type="text/javascript">
+window.onload=function(){
+	var r=document.getElementById("result");
+	var flower=document.getElementById("flower");
+	var snoopy=document.getElementById("snoopy");
+	var fruit=document.getElementById("fruit");
+	
+	flower.onclick=function(){
+		var a=confirm("꽃 이미지를 추가하시겠습니까?");
+		if(a){
+			r.innerHTML="<img src='../img/f2.png'>";
+		}	
+	}
+	snoopy.onclick=function(){
+		var a=confirm("스누피 이미지를 추가하시겠습니까?");
+		if(a){
+			r.innerHTML+="<img src='../img/s4.JPG'>";
+		}	
+	}
+	fruit.onclick=function(){
+		var a=confirm("스누피 이미지를 추가하시겠습니까?");
+		if(a){
+			r.innerHTML+="<img src='../img/f11.png'>";
+		}	
+	}
+}
+</script>
+</head>
+<body>
+<button type="button" id="flower">꽃</button>
+<button type="button" id="snoopy">스누피</button>
+<button type="button" id="fruit">과일</button>
+<hr>
+<div id="result"></div>
+</body>
+</html>

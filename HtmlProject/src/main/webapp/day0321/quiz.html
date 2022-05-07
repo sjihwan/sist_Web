@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+//이미지 변경
+function changeImg(person){
+	var result = document.getElementById("result");
+	if(person=='스파르타')
+		result.innerHTML="<img src='../image/c1.png'; style='height: 400px; width: 400px;'>";
+	else if(person=='루이지')
+		result.innerHTML="<img src='../image/c2.png'; style='height: 400px; width: 400px;'>";
+	else if(person=='배트맨')
+		result.innerHTML="<img src='../image/c3.png'; style='height: 400px; width: 400px;'>";
+}
+//테두리 변경
+function changeBorder(border_st){
+	document.getElementById("result").style.borderStyle=border_st;
+}
+</script>
+</head>
+<body>
+<!-- 이미지선택 -->
+<span><b>이미지 선택: </b></span>
+<select onchange="changeImg(this.value)">
+  <option>스파르타</option>
+  <option>루이지</option>
+  <option>배트맨</option>
+</select>
+<br>
+<br>
+<!-- 테두리 선택 -->
+<span><b>테두리 선택: </b></span>
+<input type="radio" name="teduri" value='solid' onchange="changeBorder(this.value)">solid
+<input type="radio" name="teduri" value='dotted' onchange="changeBorder(this.value)">dotted
+<input type="radio" name="teduri" value='dashed' onchange="changeBorder(this.value)">dash
+<input type="radio" name="teduri" value='groove' onchange="changeBorder(this.value)">groove
+
+<!-- 결과 -->
+<div id="result" style="position: absolute; top:10px; left:500px;
+height: 400px; width: 400px; border-width: 10px;">
+</div>
+</body>
+</html>

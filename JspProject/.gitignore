@@ -1,0 +1,13 @@
+.settings/
+build/
+
+.classpath
+.project
+
+src/main/webapp/image/
+src/main/webapp/img/
+src/main/webapp/META-INF/
+src/main/webapp/photo/
+src/main/webapp/save/
+src/main/webapp/upload/
+src/main/webapp/WEB-INF/

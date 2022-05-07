@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* Q. 아이디가 angel 이고 비밀번호가 1234 이면
+angel님 방문을 환영합니다
+존재하지 않는 아이디입니다...
+잘못된 비밀번호 입니다...
+아이디, 패스워드는 각각의 prompt창에 입력하여 실행할것 */
+function login(id,pw) {
+	if(id=="angel"){
+		if(pw!="1234"){
+			alert("잘못된 비밀번호입니다")
+		}
+		else if(pw=="1234"){
+			document.write("angel님 방문을 환영합니다<br>");
+		}
+	}
+	else
+		alert("존재하지 않는 아이디입니다");
+}
+var id=prompt("ID를 입력하시오");
+var pw=prompt("PW를 입력하시오");
+login(id,pw);
+</script>
+</head>
+<body>
+
+</body>
+</html>

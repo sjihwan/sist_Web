@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+body {
+	padding-left: 10px;
+}
+</style>
+</head>
+<body>
+<h3>폼태그 문제</h3>
+<div>
+	<h4>글자색</h4><!-- 라디오버튼 -->
+	<input type="radio" name="fcolor" value="#ff00ff">핑크
+	<input type="radio" name="fcolor" value="#228b22">초록
+	<input type="radio" name="fcolor" value="#822222">브라운
+	<input type="radio" name="fcolor" value="#9370d8" checked="checked">퍼플
+	
+	<h4>글꼴</h4><!-- 셀렉트박스 -->
+	<select id="selfont">
+		<option>Nanum Myeongjo</option>
+		<option>Nanum Pen Script</option>
+		<option>Noto Sans KR</option>
+		<option>궁서체</option>
+	</select>
+	
+	<h4>체크된 이미지 출력</h4><!-- 체크박스 -->
+	<input type="checkbox" name="imge" value="01">아이콘1
+	<input type="checkbox" name="imge" value="02">아이콘2
+	<input type="checkbox" name="imge" value="03">아이콘3
+	<input type="checkbox" name="imge" value="04">아이콘4
+
+	<br><br>
+	
+	<button type="button" id="btn">선택한 값 모두 적용하기</button>
+</div>
+
+<div style="border: 3px dotted black; width: 650px; height: 250px;
+ margin-top: 10px; padding-left: 10px;">
+  <div id="result" style="font-size: 28pt;">
+  여러분!!오늘은 즐거운 목요일 입니다
+  <div class="myimg"></div>
+  </div>
+</div>
+<script type="text/javascript">
+$("#btn").click(function(){
+	//글자색_color
+	fcolor=$("input[name='fcolor']:checked").val();
+	$("#result").css("color", fcolor);
+	//글꼴_font-family
+	ffamily=$("#selfont option:selected").text();
+	$("#result").css("font-family", ffamily);
+	//이미지출력_변수에 요소 담아 출력
+	var s='';
+	img=$("input[name='imge']:checked").each(function(i, element) {
+		s+="<img src='../image/"+$(this).val()+".png'>";
+		$(".myimg").html(s);
+	});
+});
+</script>
+</body>
+</html>

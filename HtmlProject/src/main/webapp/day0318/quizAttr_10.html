@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<button type="button" id="btn1">김태희</button>
+<button type="button" id="btn2">수지</button>
+<button type="button" id="btn3">박신혜</button>
+<br>
+<button type="button" id="btn4">점점작게</button>
+<button type="button" id="btn5">점점크게</button>
+<hr>
+<img alt="" src="../image/c1.png" width="300" id="img1" border="2">
+
+<script type="text/javascript">
+var b1=document.getElementById("btn1");
+var b2=document.getElementById("btn2");
+var b3=document.getElementById("btn3");
+var b4=document.getElementById("btn4");
+var b5=document.getElementById("btn5");
+var img=document.getElementById("img1");
+
+//이미지변경
+b1.onclick=function(){
+	img.setAttribute("src","../person/hee.jpg");
+}
+b2.onclick=function(){
+	img.setAttribute("src","../person/soojee.jpg");
+}
+b3.onclick=function(){
+	img.setAttribute("src","../person/shin.jpg");
+}
+//크기변경
+b4.onclick=function(){
+	var w=img.getAttribute("width");
+	w-=10;
+	img.setAttribute("width",w);
+}
+b5.onclick=function(){
+	var w=img.getAttribute("width");
+	w=parseInt(w);
+	w+=10;
+	img.setAttribute("width",w);
+}
+</script>
+</body>
+</html>

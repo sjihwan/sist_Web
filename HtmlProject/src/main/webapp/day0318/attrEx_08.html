@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function photoSmall() {
+	var p=document.getElementById("myimg");
+	var w=p.getAttribute("width"); //myimg의 width속성값
+	//console.log(typeof(w));
+	w-=10; //string타입이라도 -나 *는 숫자로 계산됨(+안됨)
+	p.setAttribute("width",w);
+}
+function photoLarge() {
+	var p=document.getElementById("myimg");
+	var w=p.getAttribute("width");
+	w=parseInt(w);
+	w+=10;
+	p.setAttribute("width",w);
+}
+//너비만 줄이는데 왜 높이도 줄어들까? 너비(width) 또는 높이(height) 둘 중 하나만 지정하면 나머지 하나는 비율에 맞게 줄어든다.
+</script>
+</head>
+<body>
+<h2>이미지 크기조절 이벤트</h2>
+<div>
+  <button type="button" onclick="photoSmall()">점점 작게</button>
+  <button type="button" onclick="photoLarge()">점점 크게</button>
+</div>
+<hr>
+<img src="../person/park.jpg" width="200" id="myimg">
+
+<hr>
+
+<!-- 배열에 초기값 이미지 5개를 넣고 배열을 활용해서 그 이미지를 출력해보세요 -->
+<script type="text/javascript">
+var arr=["../num/0.gif","../num/1.gif","../num/2.gif","../num/3.gif","../num/4.gif"];
+var s="";
+
+for(var i=0; i<arr.length; i++){
+	s+="<img src='"+arr[i]+"'>";
+}
+document.write(s);
+</script>
+</body>
+</html>

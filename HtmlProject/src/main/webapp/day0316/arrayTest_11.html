@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var food=["딸기","오렌지","수박","키위","바나나"];
+document.write("배열테스트<br>");
+/* document.write("0번: food"+food[0]+"<br>");
+document.write("1번: food"+food[1]+"<br>");
+document.write("2번: food"+food[2]+"<br>");
+document.write("3번: food"+food[3]+"<br>");
+document.write("4번: food"+food[4]+"<br>"); */
+
+for(var i=0; i<food.length; i++){
+	document.write("food["+i+"]: "+food[i]+"<br>");
+}
+document.write("-------------------<br>");
+</script>
+
+<h2>10개의 난수 출력하기</h2>
+<script type="text/javascript">
+var rnd;
+for(var i=1; i<=10; i++){
+	rnd=parseInt(Math.random()*10)+1;
+	
+	document.write('<b>'+rnd+'</b>&nbsp;&nbsp;');
+}
+document.write("<br>------------------<br>");
+</script>
+
+<h2>자바스크립트 배열선언하는법</h2>
+<script type="text/javascript">
+var arr=new Array();
+
+arr[0]="장미";
+arr[1]="후리지아";
+arr[2]="백합";
+arr[3]="다알리아";
+
+/* 배열출력 */
+for(var i=0; i<arr.length; i++){
+	document.write(arr[i]+"<br>");
+}
+document.write("----------------------<br>");
+</script>
+
+<h2>자바스크립트 초기값지정배열_html속성추가하여 출력</h2>
+<script type="text/javascript">
+var arr2=['red','tomato','green','pink','gray'];
+/* 출력을 하는데 Hello라는 문구를 5개의 컬러별로 출력하시오_font의 color속성 이용할것!! */
+for(var i=0; i<arr2.length; i++){
+	/* document.write("Hello".fontcolor(arr2[i])+"<br>"); */
+	document.write("<font color='"+arr2[i]
+	+"' size='5'>Hello</font><br>");
+}
+</script>
+
+<h2>자바스크립트 2차원 배열선언하는법</h2>
+<script type="text/javascript">
+var arr3=new Array;
+arr3[0]=['red','장미꽃'];
+arr3[1]=['green','국화'];
+arr3[2]=['blue','수국'];
+arr3[3]=['magenta','제라늄'];
+
+for(var i=0; i<arr3.length; i++){
+	document.write("<font color="+arr3[i][0]+" size='5'>"+arr3[i][1]+"</font><br>");
+}
+</script>
+
+<h2>배열 color별로 출력</h2>
+<script type="text/javascript">
+var colors=["red","blue","green","magenta","tomato"];
+
+/* h1태그로 위에 배열문자를 해당 색상별로 출력하기 */
+for(var i=0; i<colors.length; i++){
+	/* document.write("<h1>"+colors[i].fontcolor(colors[i])+"</h1>"); */
+	document.write("<h1 style='color: "+colors[i]+"'>"+colors[i]+"</h1>");
+}
+</script>
+
+<hr>
+<script type="text/javascript">
+var flowers=new Array();
+
+flowers.push("장미"); //배열마지막 요소추가
+console.log(flowers);
+
+flowers.push("안개꽃");
+flowers.push("코스모스");
+flowers.push("벚꽃");
+
+for(var i=0; i<flowers.length; i++){
+	document.write("<h1>"+flowers[i]+"</h1>");
+}
+console.log(flowers);
+
+flowers.pop(); //마지막 배열값 제거
+flowers.pop();
+flowers.shift(); //첫번째 요소 제거
+flowers.unshift("다알리아"); //배열의 처음에 요소추가
+
+for(var i=0; i<flowers.length; i++){
+	document.write("<h3>"+flowers[i]+"</h3>");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	//small
+	var s=document.getElementById("btn1")
+	s.onclick=function(){
+		var i=document.getElementById("myimg");
+		var small=parseInt(i.style.width)-10;
+		i.style.width=small+"px";
+	}
+	//large
+	var l=document.getElementById("btn2")
+	l.onclick=function(){
+		var i=document.getElementById("myimg");
+		var large=parseInt(i.style.width)+10;
+		i.style.width=large+"px";
+	}
+}
+</script>
+</head>
+<body>
+<h2>사진크기변경 다른방법으로 구현</h2>
+<button type="button" id="btn1">점점작게</button>
+<button type="button" id="btn2">점점크게</button>
+<hr color="orange" width="500" align="left" size="10">
+<img alt="" src="../person/you.jpg" style="width: 200px;" id="myimg">
+</body>
+</html>

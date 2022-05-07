@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+    setInterval(rndNum,3000);
+    //rndNum();
+}
+
+function rndNum() {
+	var su=new Array();
+	for(var i=0; i<3; i++){
+		su[i]=parseInt(Math.random()*10);
+		
+		//중복체크
+		for(var j=0; j<i; j++){
+			if(su[i]==su[j]){
+				i--;
+				break;
+			}
+		}
+	}
+	
+	imge1.src="../num/"+su[0]+".gif";
+	imge2.src="../num/"+su[1]+".gif";
+	imge3.src="../num/"+su[2]+".gif";
+	
+}
+</script>
+</head>
+<body>
+<img alt="" src="" name="imge1">
+<img alt="" src="" name="imge2">
+<img alt="" src="" name="imge3">
+</body>
+</html>

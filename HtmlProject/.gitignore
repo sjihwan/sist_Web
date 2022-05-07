@@ -1,0 +1,19 @@
+# 각 이름의 폴더 제외
+/.settings/
+/bin/
+/build/
+
+.classpath
+.project
+.tern-project
+
+src/main/webapp/car/
+src/main/webapp/coco/
+src/main/webapp/cover/
+src/main/webapp/gungame/
+src/main/webapp/image/
+src/main/webapp/img/
+src/main/webapp/media/
+src/main/webapp/num/
+src/main/webapp/person/
+src/main/webapp/popup/

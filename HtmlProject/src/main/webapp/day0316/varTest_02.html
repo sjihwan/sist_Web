@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var age=28;
+var weight=62.5;
+var id='angel';
+
+var showInfo=function() {
+	document.write("age: "+age+"<br>");
+	document.write("weight: "+weight+"<br>");
+	document.write("id: "+id+"<br>");
+}
+showInfo();
+
+/* 전역 & 지역변수 */
+// 전역변수
+var a=10;
+var b=100;
+
+function outer() {
+	// 지역변수: 지역 내에서만 사용가능
+	var a=20;
+	
+	document.write("3.outer a="+a+"<br>");
+	document.write("4.outer b="+b+"<br>");
+}
+
+outer();
+
+document.write("1.a="+a+"<br>");
+document.write("2.b="+b+"<br>");
+</script>
+</body>
+</html>

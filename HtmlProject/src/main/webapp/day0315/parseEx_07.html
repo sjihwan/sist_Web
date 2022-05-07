@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//암시적(암묵적) 형변환: 자바스크립트 컴파일러에 의한 자동형변환
+var result=1+"2";
+document.write("result="+result+"<br>");
+
+var result2="2"+true;
+document.write("result2="+result2+"<br>");
+
+//명시적 형변환: 데이터 손실이 일어날 수 있다는 것을 알림
+var test="300.1";
+document.write(parseInt(test)+10+"<br>"); //310
+
+var test2="200";
+document.write(parseInt(test2)+10+"<br>");
+
+var test3="400.1";
+document.write(parseFloat(test3)+10+"<br>"); //410.1
+</script>
+</body>
+</html>

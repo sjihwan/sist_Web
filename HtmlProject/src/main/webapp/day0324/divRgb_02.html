@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div>0</div><div>1</div><div>2</div><div>3</div><div>4</div>
+<span></span>
+
+<script type="text/javascript">
+//0~4 클릭할 객체
+$("div").css({
+	"width": "120px",
+	"height": "120px",
+	"border": "1px solid gray",
+	"float": "left",
+	"font-size": "20pt",
+	"text-align": "center",
+	"line-height": "120px",
+	"cursor": "pointer"
+});
+
+//색상표 출력할곳
+$("span").css("font-size", "20pt");
+
+
+//div의 크기를 일정하게 지정한후 랜덤하게 색상을 만들어 배경색을 넣어준다
+
+/* alert($("div").length); */
+for(var i=0; i<$("div").length; i++){
+	//rgb색상얻기
+	var r=parseInt(Math.random()*256);
+	var g=parseInt(Math.random()*256);
+	var b=parseInt(Math.random()*256);
+	
+	var color="rgb("+r+","+g+","+b+")";
+	
+	$("div").eq(i).css("background-color", color);
+}
+
+//각 div를 클릭할 경우 해당 배경색을 얻어 span태그에 넣어준다
+$("div").click(function(){
+	setcolor=$(this).css("background-color");
+ 	$("span").text(setcolor);
+	/* $("span").html(setcolor); */
+});
+</script>
+</body>
+</html>

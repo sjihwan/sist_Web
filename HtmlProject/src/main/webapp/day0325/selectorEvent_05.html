@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+.red{color:red;}
+.green{color:green;}
+.blue{color:blue;}
+
+div.content>b {
+	cursor: pointer;
+	font-family: 'Nanum Pen Script';
+	font-size: 32pt;
+}
+div.answer>h5 {
+	/* indent: 들여쓰기 */
+	text-indent: 30px;
+	font-family: "Nanum Myeonjo";
+	font-size: 20pt;
+}
+</style>
+
+<script type="text/javascript">
+//문제: 내용을 클릭시 그 내용에 대한 댓글만 보이고 나머지 댓글내용은 안보이게 처리하시오
+$(function(){
+	$("div.answer").hide();
+	
+	//내용n클릭시 이벤트
+	$("div.content>b").click(function(){
+		//그 내용에 대한 댓글 보이게
+		/* $(this).find(".answer h5").show(); */ //왜 안될까?
+		$(this).next().slideDown('slow');
+		//나머지 댓글 안보이게
+		$(this).parent().siblings().find("div.answer").slideUp('slow');
+	});
+});
+</script>
+</head>
+<body>
+<div class="content red">
+  <b>내용1</b>
+  <div class="answer">
+    <h5>내용1에 대한 댓글</h5>
+    <h5>내용1에 대한 댓글</h5>
+    <h5>내용1에 대한 댓글</h5>
+  </div>
+</div>
+<div class="content green">
+  <b>내용2</b>
+  <div class="answer">
+    <h5>내용2에 대한 댓글</h5>
+    <h5>내용2에 대한 댓글</h5>
+    <h5>내용2에 대한 댓글</h5>
+  </div>
+</div>
+<div class="content blue">
+  <b>내용3</b>
+  <div class="answer">
+    <h5>내용3에 대한 댓글</h5>
+    <h5>내용3에 대한 댓글</h5>
+    <h5>내용3에 대한 댓글</h5>
+  </div>
+</div>
+</body>
+</html>

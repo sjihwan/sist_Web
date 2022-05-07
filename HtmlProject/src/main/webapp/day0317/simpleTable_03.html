@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+/* div */
+#out {
+	position: absolute;
+	left: 10px;
+	top: 150px;
+	width: 350px;
+	height: 200px;
+	border: 2px solid gray;
+	background: #ffffcc;
+	padding: 20 10;
+}
+</style>
+
+<script type="text/javascript">
+function init() { //초기화 함수
+	out.innerHTML="";
+}
+
+function disp() {
+	
+	//checkbox이용한 다중선택
+	var hobbyStr="나의 취미는 ";
+	var flag=false;
+	
+	for(var i=0; i<frm.hobby.length; i++){
+		if(frm.hobby[i].checked){
+			flag=true;
+			hobbyStr+=frm.hobby[i].value+" ";
+		}
+	}
+	//취미를 하나도 선택안하면 초기값 그대로(false)
+	if(!flag){
+		hobbyStr="취미가 없습니다<br>";
+	}
+	else{
+		hobbyStr+="입니다<br>";
+	}
+	out.innerHTML="취미: "+hobbyStr;
+	
+	//거주지 선택하여 div에 출력
+	var homeStr="나의 거주지는 ";
+	for(var i=0; i<frm.home.length; i++){
+		if(frm.home[i].checked){
+			homeStr+=frm.home[i].value+" 입니다<br>";
+		}
+	}
+	out.innerHTML+="거주지: "+homeStr;
+	
+	//나이를 div에 출력
+	out.innerHTML+="나이: "+frm.age.value+"<br>";
+}
+</script>
+
+</head>
+<body>
+<form action="#" name="frm">
+  <table border="1" style="width: 400px;">
+    <tr>
+      <th width="100">취미</th>
+        <td>
+          <input type="checkbox" name="hobby" value="게임">게임
+          <input type="checkbox" name="hobby" value="낚시">낚시
+          <input type="checkbox" name="hobby" value="독서">독서
+          <input type="checkbox" name="hobby" value="음악감상">음악감상
+        </td>
+  	</tr>
+  	
+  	<tr>
+  	  <th>거주지</th>
+  	    <td>
+  	      <input type="radio" name="home" value="서울" checked="checked">서울
+  	      <input type="radio" name="home" value="경기">경기
+  	      <input type="radio" name="home" value="인천">인천
+  	      <input type="radio" name="home" value="부산">부산
+  	    </td>
+  	</tr>
+  	
+  	<tr>
+  	  <th>연령</th>
+  	    <td>
+  	      <select size="1" name="age"> <!-- 보이는 옵션 갯수 -->
+  	        <option value="20대">20대</option>
+  	        <option value="30대">30대</option>
+  	        <option value="40대">40대</option>
+  	        <option value="50대">50대</option>
+  	        <option value="60대">60대</option>
+  	      </select>
+  		</td>
+  	</tr>
+  	
+  	<tr align="center">
+      <td colspan="2">
+        <input type="button" value="결과출력" onclick="disp()">
+        <input type="reset" value="초기화" onclick="init()">
+      </td>
+    </tr>
+  </table>
+</form>
+
+<div id="out"></div>
+</body>
+</html>

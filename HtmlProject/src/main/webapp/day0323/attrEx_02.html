@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<!-- 
+attr("속성")
+attr("속성","값")
+eq(0): 인덱스를 의미, 첫번째 인데스를 의미한다
+ -->
+</body>
+
+<div class="a">
+	<div>Happy</div>
+	<div>Hello</div>
+</div>
+
+<div class="b">
+	<div>Java</div>
+	<div>Oracle</div>
+	<h3>b클래스 아래의 h3태그입니다</h3>
+	<img alt="" src="">
+</div>
+
+<div class="c">
+	<b>오늘은 수요일 입니다</b>
+	<div>제이쿼리 시작하는 날</div>
+	<h3>c클래스 아래의 h3태그입니다</h3>
+	<img alt="" src="">
+</div>
+
+
+<script type="text/javascript">
+//1. div의 클래스가 a인 태그아래 모든 div안에 있는 글자색을 'blue', 글꼴을 'Gamja Flower', 크기를 '20px'로 변경
+$("div.a div").css({
+	"color": 'blue',
+	"font-family": "Gamja Flower",
+	"font-size": "20px"
+});
+
+//2. div의 클래스가 b인 바로 아래 div태그의 width를 300px로, border를 변경
+$("div.b>div").css({
+	"width": "300px",
+	"border": "2px solid gray"
+});
+
+//3. div의 클래스가 b인 바로 아래 img를 변경하고, width를 200px로 변경
+$("div.b>img").attr("src", "../img/1.png").css("width", "200px");
+
+//4. div의 클래스가 c인 아래 b태그의 글자색과 배경색 글자크기 변경
+$("div.c>b").css({
+	"background": "brown",
+	"color": "red",
+	"font-size": "1.5em"
+});
+//5. div의 클래스가 c인 아래 img에 bts사진 넣고 동그랗게 나오도록 알아서 변경
+$("div.c>img").attr("src", "../img/redhair4.PNG").css({
+	"border-radius": "100px",
+	"width": "100px",
+	"height": "100px"
+});
+//6. 모든 h3배경색을 magenta, 글자색을 white, 너비를 300px, border를 굵게 아무모양이나 변경
+$("h3").css({
+	"background": "magenta",
+	"color": "white",
+	"width": "300px",
+	"border": "5px dashed gold"
+});
+</script>
+</html>

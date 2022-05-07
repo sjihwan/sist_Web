@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="one">
+	첫번째 div
+	<div class="hana">div 하나</div>
+	<div>div 둘</div>
+	<div>div 셋</div>
+	<h3>h3 Tag</h3>
+	<h4>h4 Tag</h4>
+</div>
+
+<div class="two">
+	두번째 div
+	<div class="hana">div 하나</div>
+	<div>div 둘</div>
+	<div>div 셋</div>
+	<h3>h3 Tag</h3>
+	<h4>h4 Tag</h4>
+</div>
+
+<script type="text/javascript">
+//parent():부모태그
+//siblings():형제태그
+//children():자식태그
+$("div.one div.hana").siblings().css("color","red");
+$("div").children("div.hana").css("text-decoration","underline");
+$("div.hana").next().next().css("background-color","orange");
+$("div.two").find("h3").css("border","2px solid cyan");
+
+//one이라는 div를 클릭시 그 하위태그 중 div를 찾아서 숨겨보시오
+$("div.one").click(function(){
+	//$(this).find("div").hide('slow');
+	$(this).siblings().find("div").hide('slow');
+});
+
+$("div.two").click(function(){
+	//자기 자식들 hide
+	//$(this).find("div").hide('slow');
+	$(this).find("h3,h4").hide('slow');
+	//자기 형제의 자식들 hide
+	//$(this).siblings().find("div").hide('slow');
+	$(this).siblings().find("h3,h4").hide('slow');
+});
+</script>
+</body>
+</html>

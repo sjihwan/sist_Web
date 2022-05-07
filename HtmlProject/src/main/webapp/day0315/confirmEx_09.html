@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+//confirm()
+/* var ans=confirm("정말 삭제하시겠습니까?");
+
+if(ans==1)
+	document.write("삭제되었습니다<br>");
+else
+	document.write("삭제하지 않았습니다<br>"); */
+	
+//eval()...되도록이면 사용하지 말것
+/* var a=eval("10.5+5");
+document.write(a+"<br>");
+document.write(parseFloat(a)+parseInt(a)); //30.5 */
+
+/* prompt 창에 구구단의 단을 입력시 
+2단을 입력하면 2*1=2.....2*9=18 */
+var dan=Number(prompt("몇 단?"));
+for (var i = 1; i <= 9; i++) {
+	document.write(dan+"*"+i+"="+dan*i+"<br>");
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

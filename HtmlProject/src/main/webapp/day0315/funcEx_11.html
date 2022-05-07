@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	/* document.write("안녕하세요 효림님 자바스크립트 수업에 온걸 환영해요<br>");
+	document.write("안녕하세요 주찬님 자바스크립트 수업에 온걸 환영해요<br>");
+	document.write("안녕하세요 현정님 자바스크립트 수업에 온걸 환영해요<br>"); */
+	
+	//중복되는 부분을 함수로 만든후..중복되지않는 부분은 파라미터로 넘긴다
+	function showName(name) {
+		document.write("안녕하세요 "+name+"님 자바스크립트 수업에 온걸 환영합니다")
+	}
+	
+	/* showName("효림");
+	showName("주찬");
+	showName("현정"); */
+	
+	/* Q.함수명: showInfo
+	함수호출시 name,age를 파라미터로 넘긴후
+	안녕하세요
+	아라님의 나이는 25세입니다 */
+	
+	function showInfo(name,age) {
+		document.write("안녕하세요<br>"+name+"님의 나이는 "+age+"세입니다");
+	}
+	/* showInfo("아라",25); */
+	
+	//Q2. 리터럴 방식으로 여러분의 이름,나이,몸무게를 파라미타로 받아서 출력하는 함수를 만드세요
+	/* 이름: 이경룡
+	나이: 23세
+	몸무게: 67kg */
+	
+	showYou=function(name,age,weight) {
+		document.write("이름: "+name+"<br>나이: "+age+"세<br>몸무게: "+weight+"kg<br>");
+	}
+	showYou("이경룡",23,67);
+</script>
+</body>
+</html>

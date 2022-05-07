@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	width: 500px;
+	border: 3px solid gray;
+	border-collapse: collapse;
+}
+th,td {
+	border: 1px dotted gray;
+	font-size: 10pt;
+}
+tr {height: 50px;}
+
+#result{
+	font-family: "카페24 빛나는별";
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	//회사 datalist
+	var work=document.getElementById("work"); 
+	//[결과출력창] div
+	var result=document.getElementById("result");
+	//호감도 progress bar
+	p=document.getElementById("p");
+	//호감도 숫자
+	pout=document.getElementById("pout");	
+	
+	//호감도 측정버튼
+	document.getElementById("btnp").onclick=function(){
+		var hogam=parseInt(Math.random()*81)+20; //20~80
+		var i=0;
+		interval=setInterval(function(){
+			i++;
+			p.value=i;
+			pout.innerHTML="<b style='color:red;'>"+i+"</b>";
+			if(i==hogam){
+				clearInterval(interval);
+			}
+		},30);
+	}
+	/* document.getElementById("btnp").onclick=function(){
+	document.getElementById("p").value+=parseInt(Math.random()*100)+1;
+	document.getElementById("pout").innerHTML=document.getElementById("p").value;
+	} */
+	
+	//결과출력버튼 이벤트
+	document.getElementById("btnresult").onclick=function(){
+		//회사 출력
+		result.innerHTML+="<br>희망 회사는 " + document.frm.company.value + " 입니다";
+		//키 출력
+		result.innerHTML+="<br>나의 키는 " + document.frm.height.value + " cm 입니다";
+		//나이 출력
+		result.innerHTML+="<br>나의 몸무게는 " + document.frm.weight.value + " kg 입니다";
+		//호감도 출력
+		result.innerHTML+="<br>나의 호감도는 " + p.value + " 입니다<br>";
+	}
+	
+	
+}
+</script>
+</head>
+<body>
+<form action="#" name="frm">
+	<table>
+	  <caption>[복습 출력]</caption>
+	    <tr>
+		  <td>
+		    <b>입사하고 싶은 회사 및 분야는?</b>
+		      <input type="text" name="company" list="work" style="width: 150px;">
+		        <datalist id="work">
+		          <option value="삼성">
+		          <option value="엘지">
+		          <option value="카카오">
+		          <option value="네이버">
+		          <option value="당근마켓">
+		        </datalist>
+		  </td>
+	    </tr>
+	    <tr>
+	      <td>
+	        <b>당신의 키와 몸무게 선택하세요</b>
+	          <input type="number" name="height" min="150" max="210"
+	          step="5" value="170" placeholder="키">&nbsp;&nbsp;
+	          <input type="number" name="weight" min="40" max="100"
+	          step="5" value="60" placeholder="몸무게">          
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>
+	        <b>당신에 대한 호감도는?</b>
+	        <progress id="p" value="0" max="100"></progress>
+	        &nbsp;
+	        <span id="pout">0</span>&nbsp;&nbsp;
+	        <button type="button" id="btnp">측정</button>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>
+	        <button type="button" id="btnresult"
+	        style="width: 200px; font-size: 13pt;">결과확인</button>
+	      </td>
+	    </tr>
+	</table>
+</form>
+<div id="result" style="font-size: 30pt; margin-top: 30px;">
+<b>[결과출력창]</b><br>
+</div>
+</body>
+</html>

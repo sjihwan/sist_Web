@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3 class="a"></h3>
+<hr>
+<h3 class="b">h3의 내용을 이곳에 복사하세요</h3>
+
+<script type="text/javascript">
+$("h3.a").html("예쁜 캐릭터 인형입니다").append("<img src='../image/02.png'>");
+
+//문제
+//h3.a 에서 클릭하면 "안의 코드를 복사하였습니다"라고 나오게 하고(aler창에 나오게)
+//h3.b 에서 클릭을 하면 그내용이 그대로 출력(복사)되도록 해보세요
+$("h3.a").click(function(){
+	tag=$(this).html();
+	alert("안의 코드를 복사하였습니다");
+});
+
+$("h3.b").click(function(){
+	$(this).html(tag);
+	$(this).append(tag);
+});
+</script>
+</body>
+</html>

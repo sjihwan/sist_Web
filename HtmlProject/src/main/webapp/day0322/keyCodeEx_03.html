@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 처음위치를 500,300에 두고 방향에 따라 10씩 이동하게 한다,
+엔터 클릭시 처음위치로 이동 -->
+<style type="text/css">
+#myimg {
+	position: absolute;
+}
+</style>
+<script type="text/javascript">
+var myimg;
+var xpos=500;
+var ypos=300;
+
+window.onload=function(){
+	myimg=document.getElementById("myimg");
+	
+	myimg.style.top=ypos+"px";
+	myimg.style.left=xpos+"px";
+	
+	//키보드 아스키코드값
+	//상:38 하:40 좌:37 우:39 엔터:13
+	window.onkeydown=function(e) {
+		switch (e.keyCode) {
+		case 38:
+			ypos -= 10;
+			myimg.style.top=ypos+"px";
+			break;
+		case 40:
+			ypos += 10;
+			myimg.style.top=ypos+"px";
+			break;
+		case 37:
+			xpos -= 10;
+			myimg.style.left=xpos+"px";
+			break;
+		case 39:
+			xpos += 10;
+			myimg.style.left=xpos+"px";
+			break;
+		case 13:
+			xpos=500;
+			ypos=300;
+			myimg.style.top=ypos+"px";
+			myimg.style.left=xpos+"px"
+			break;
+		}
+	}
+}
+</script>
+</head>
+<body>
+<img alt="" src="../image/02.png" id="myimg">
+</body>
+</html>

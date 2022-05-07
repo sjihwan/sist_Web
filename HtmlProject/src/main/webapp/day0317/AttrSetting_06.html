@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.test {
+	width: 100px;
+}
+.result {
+	width: 300px;
+	height: 350px;
+}
+div #img_div {
+	position: absolute;
+	left: 500px;
+	top: 100px;
+	cursor: pointer;
+}
+#result_div>img {
+	position: absolute;
+	left: 350px;
+	top: 300px;
+	width: 500px;
+	height: 550px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	//id로 객체요소 읽어온다
+	img1=document.getElementById("img1");
+	img2=document.getElementById("img2");
+	img3=document.getElementById("img3");
+	img4=document.getElementById("img4");
+	
+	//각 객체마다 온클릭 기능부여..
+	//setAttribute는 선택한 요소의 element 속성값을 정해준다
+	img1.onclick=function(){
+		//img5 객체에 src속성값을 각각의 객체src를 읽어와서 변경하기
+		img5.setAttribute("src",img1.getAttribute("src"))
+	}
+	img2.onclick=function(){
+		//img5 객체에 src속성값을 각각의 객체src를 읽어와서 변경하기
+		img5.setAttribute("src",img2.getAttribute("src"))
+	}
+	img3.onclick=function(){
+		//img5 객체에 src속성값을 각각의 객체src를 읽어와서 변경하기
+		img5.setAttribute("src",img3.getAttribute("src"))
+	}
+	img4.onclick=function(){
+		//img5 객체에 src속성값을 각각의 객체src를 읽어와서 변경하기
+		img5.setAttribute("src",img4.getAttribute("src"))
+	}
+}
+</script>
+</head>
+<body>
+<div id="img_div"> <!-- 4개의 이벤트 이미지 -->
+	<img alt="" src="../image/IU_Blueming.PNG" id="img1" class="test">
+	<img alt="" src="../img/1.png" id="img2" class="test">
+	<img alt="" src="../img/2.png" id="img3" class="test">
+	<img alt="" src="../img/3.png" id="img4" class="test">
+</div>
+<div id="result_div"> <!-- 결과 이미지 출력 -->
+	<img alt="" src="../image/IU_Blueming.PNG" class="result" id="img5">
+</div>
+</body>
+</html>

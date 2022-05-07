@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<button type="button" id="add">+</button>
+
+<script type="text/javascript">
+//그동안의 click방식
+/* $("#add").click(function(){
+	$("body").append("<button>+</button>");
+}); */
+
+//element가 나중에 동적으로 생성되더라도 이벤트가 유지되게 하려면
+//$(document).on('click', id, function)
+$(document).on("click", "button[id='add']", function(){
+	$("body").append("<button id='add'>+</button>");
+});
+</script>
+</body>
+</html>

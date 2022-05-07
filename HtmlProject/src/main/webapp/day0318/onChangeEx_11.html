@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+#out {
+	font-family: Nanum Pen Script;
+	font-weight: bold;
+	padding: 20px 20px; /* 상하좌우 20px */
+	width: 500px;
+	margin-top: 50px;
+	border: 1px solid gray;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	//출력div
+	text=document.getElementById("out");
+	
+	//글자색
+	fc=document.getElementById("mycolor");
+	//배경색
+	bg=document.getElementById("mycolor2");
+	//테두리 굵기
+	bor=document.getElementById("selWidth");
+
+	//onchange이벤트
+	fc.onchange=function(){
+		text.style.color=this.value;
+	}
+	bg.onchange=function(){
+		text.style.background=this.value;
+	}
+	bor.onchange=function(){
+		/* document.write(bor.value+"px"); */
+		out.style.borderWidth=this.value+"px";
+	}
+	
+	//글꼴 크기 조절
+	//조건: 3px씩 감소/증가 되도록 한다.
+	//8보다 작아지면 경고메세지..60보다 커지면 경고메세지
+	fsize=document.getElementById("fsize");
+	fsize.innerHTML="현재 글꼴 크기는 40px 입니다";
+	//btn1..점점작게
+	document.getElementById("btn1").onclick=function(){
+		outsize=parseInt(out.style.fontSize);
+		outsize-=3;
+		
+		if(outsize<8){
+			alert("더이상 줄일수 없어요");
+			return;
+		}
+		
+		out.style.fontSize=outsize+"px";
+		fsize.innerHTML="현재글꼴 크기는 "+outsize+"px 입니다";
+	}
+	//btn2..점점크게
+	document.getElementById("btn2").onclick=function(){
+		outsize=parseInt(out.style.fontSize);
+		outsize+=3;
+		
+		if(outsize>60){
+			alert("더이상 키울수 없어요");
+			return;
+		}
+		
+		out.style.fontSize=outsize+"px";
+		fsize.innerHTML="현재글꼴 크기는 "+outsize+"px 입니다";
+	}
+}
+</script>
+</head>
+<body>
+<!-- 폰트조절 이벤트 -->
+<!-- 크기 조절 -->
+<button type="button" id="btn1">점점작게</button>
+<button type="button" id="btn2">점점크게</button>
+<hr>
+<div id="fsize"></div>
+<!-- color,borderWidth 조절 -->
+<b>글자색선택:</b>
+<input type="color" value="#ff00ff" id="mycolor">
+<br>
+<b>배경색선택:</b>
+<input type="color" value="#ccccff" id="mycolor2">
+<br>
+<b>테두리선 굵기 선택:</b>
+<select id="selWidth" style="width: 120px;">
+	<option value="0">없음</option>
+	<option>1</option>
+	<option>3</option>
+	<option>5</option>
+	<option>7</option>
+	<option>9</option>
+</select>
+<!-- 텍스트 출력_div -->
+<div id="out" style="font-size: 40px;">오늘은 즐거운 금요일입니다</div>
+</body>
+</html>

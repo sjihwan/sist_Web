@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style type="text/css">
+div#logo {
+	width: 250px;
+	height: 130px;
+	margin: 100px auto;
+	cursor: pointer;
+}
+ul#list {
+	width: 1000px;
+	margin: 100px auto;
+}
+
+li {
+	list-style: none;
+	float: left;
+	cursor: pointer;
+	width: 150px;
+	height: 220px;
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="logo"><img alt="" src="../coco/coco_logo.png"></div>
+    <ul id="list">
+      <li><img alt="" src="../coco/image_01.png"></li>
+      <li><img alt="" src="../coco/image_02.png"></li>
+      <li><img alt="" src="../coco/image_03.png"></li>
+      <li><img alt="" src="../coco/image_04.png"></li>
+      <li><img alt="" src="../coco/image_05.png"></li>
+      <li><img alt="" src="../coco/image_06.png"></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+//fadeOut
+$("li img").click(function() {
+	$(this).fadeOut('slow');
+});
+//fadeIn
+$("#logo img").click(function() {
+	$("li img").fadeIn('slow').css("border","2px dotted tomato");
+});
+
+
+/* $("li img").click(function() {
+	$(this).fadeTo(1000,0.3);
+});
+$("#logo").click(function() {
+	$("li img").fadeTo(3000,1);
+}); */
+</script>
+</body>
+</html>

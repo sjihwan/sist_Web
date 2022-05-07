@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* function change01() {
+	myimg1.src="/HtmlProject/image/c1.png";
+	myimg2.src="/HtmlProject/image/c1.png";
+}
+function change02() {
+	myimg1.src="../image/c2.png";
+	myimg2.src="../image/c2.png";
+}
+function init() {
+	myimg1.src="/HtmlProject/image/c1.png";
+	myimg2.src="../image/c2.png";
+} */
+window.onload=function(){
+	//버튼1
+	//1. id로 해당요소 읽어온다
+	btn1=document.getElementById('btn1');
+	//읽어온 객체에 이벤트 부여
+	btn1.onclick=function() {
+		//myimg1.getAttribute("src");//속성값 읽어오기
+		//속성값 변경
+		myimg1.setAttribute("src", "/HtmlProject/image/c3.png"); //절대주소
+		myimg2.setAttribute("src","../image/c4.png"); //상대주소
+		//1번 이미지 너비 변경
+		myimg1.style.width='100px';
+		myimg2.style.width='100px';
+	}
+	//버튼2
+	document.getElementById("btn2").onclick=function(){
+		myimg1.setAttribute("src","/HtmlProject/image/01.png");
+		myimg2.setAttribute("src","../image/02.png");
+	}
+	//버튼3..원래대로
+	document.getElementById("btn3").onclick=function(){
+		myimg1.setAttribute("src","/HtmlProject/image/c1.png");
+		myimg2.setAttribute("src","../image/c2.png");
+		//원본너비? naturalWidth
+		myimg1.style.width='256px';
+		myimg2.style.width='256px';
+	}
+}
+</script>
+</head>
+<body>
+<h4>절대주소를 이용한 이미지</h4>
+<img alt="" src="/HtmlProject/image/c1.png" id="myimg1">
+<hr>
+<h4>상대주소를 이용한 이미지</h4>
+<img alt="" src="../image/c2.png" id="myimg2">
+<hr>
+<input type="button" value="변경1" id="btn1">
+<input type="button" value="변경2" id="btn2">
+<input type="button" value="원래대로" id="btn3">
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function() { //window.onload 함수 오버라이딩: html로딩이 다 끝난후 시작해라
+// 변수에 리스트 누적
+var list='';
+
+list+='<ul>';
+list+='<li>Hello</li>';
+list+='<li>JavaScript</li>';
+list+='</ul>';
+
+/* document.write(list); */
+
+// Html문서의 body태그에 넣겠다
+document.body.innerHTML=list;
+}
+</script>
+</head>
+<body>
+<!-- 
+<ul>
+<li>Hello</li>
+<li>JavaScript</li>
+</ul>
+ -->
+</body>
+</html>

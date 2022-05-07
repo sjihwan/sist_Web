@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+
+<script type="text/javascript">
+
+//모든 이미지에 같은 이미지를 넣고 width,height,border를 설정
+$("img").attr("src","../image/01.png").css({
+	"width": "200px",
+	"height": "200px",
+	"border": "3px groove gold"
+});
+//5개의 또다른 이미지명을 배열에 넣는다
+var img=new Array(5);
+img=["../image/c1.png",
+	"../image/c2.png",
+	"../image/c3.png",
+	"../image/c4.png",
+	"../image/c5.png"];
+//img태그에 마우스를 올리면 5개 이미지 중 한개를 랜덤으로 구한후 src를 변경한다
+$("img").mouseover(function(){
+	imgsrc=$(this).attr("src");
+	$(this).attr("src",img[parseInt(Math.random()*5)]);
+});
+//마우스가 벗어나면 다시 원래대로
+$("img").mouseout(function(){
+	$(this).attr("src",imgsrc);
+});
+</script>
+</body>
+</html>

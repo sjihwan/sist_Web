@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+#show{
+	font-family: '카페24 빛나는별';
+	font-size: 1.5em;
+	margin-top: 30px;
+}
+div.box{
+	float: left;
+	margin-left: 20px;
+	border: 2px solid gray;
+	border-radius: 10px;
+}
+</style>
+</head>
+<body>
+<button type="button" class="btn btn-info" id="btn1">XML데이터를 ajax함수를 통해 읽기</button>
+<div id="show"></div>
+<script type="text/javascript">
+$("#btn1").click(function(){
+	$.ajax({
+		type:"get",
+		url:"../day0401/teamtoxml.jsp",
+		dataType:"xml",
+		success:function(data){
+			var s="<h3>XML데이터 읽기</h3>";
+			$(data).find("team").each(function(i,element){
+				var n=$(element);
+				//var n=$(this);와 동일
+				
+				s+="<div class='alert alert-info box' style='width: 300px;'>";
+				s+="번호: "+n.attr("num")+"<br>";
+				s+="이름: "+n.find("name").text()+"<br>";
+				s+="운전면허: "+n.find("driver").text()+"<br>";
+				s+="주소: "+n.find("addr").text()+"<br>";
+				s+="작성일: "+n.find("writeday").text();
+				s+="</div>";
+			});
+			$("#show").html(s);
+		}
+	});
+});
+</script>
+</body>
+</html>

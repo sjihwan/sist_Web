@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+label {
+	font-size: 14px;
+	line-height: 25px; /* 줄 간격 */
+}
+ul {
+	list-style: none;
+}
+li {
+	margin: 20px;
+}
+li label {
+	width: 80px;
+	float: left;
+}
+fieldset {
+	margin: 15px;
+}
+</style>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+	<!-- <form action="#" method="post">
+	  <input type="text">
+	  <input type="button" value="검색">
+	  
+	  <fieldset>
+	    <label>아이디: <input type="text" id="id" size="10"></label>
+	    <label>비밀번호: <input type="password" id="pw" size="10"></label>
+	    <input type="submit" value="로그인">
+	  </fieldset>
+	</form> -->
+	<form action="#">
+	  <fieldset>
+	    <legend>개인정보</legend>
+	    <ul>
+	      <li>
+	        <label>이름</label>
+	        <input type="text" id="name">
+	      </li>
+	      <li>
+	        <label>이메일주소</label>
+	        <input type="text" id="main">
+	      </li>
+	    </ul>
+	  </fieldset>
+	  <fieldset>
+	    <legend>로그인정보</legend>
+	    <ul>
+	      <li>
+	        <label>아이디</label>
+	        <input type="text" id="id">
+	      </li>
+	      <li>
+	        <label>비밀번호</label>
+	        <input type="text" id="pw">
+	      </li>
+	    </ul>
+	  </fieldset>
+	</form>
+	<hr>
+	<ul>
+		<li>
+		   <label>점유율 0.8</label>
+		   <meter value="0.8"></meter><!-- 전체크기 1 기준 0.8만큼 차지 -->
+		</li>
+		<li>
+		   <label>사용량 65%</label>
+		   <!-- 전체 100중에서 65만큼 차지 -->
+		   <meter min="0" max="100" value="65"></meter>
+		</li>
+		<li>
+		   <label>트래픽 초과</label>
+		   <meter min="1024" max="7890" value="9999"></meter>
+		</li>
+		<li>
+		   <label>적정 트래픽</label>
+		   <!-- 전체 1중에서 현재 0.5 적정도는 0.8로 설정 -->
+		   <meter value="0.5" optimum="0.8"></meter>
+		</li>
+	</ul>
+</body>
+</html>

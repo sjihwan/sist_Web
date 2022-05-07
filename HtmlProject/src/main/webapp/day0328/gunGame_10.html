@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+li {list-style: none;}
+body {
+	background-image: url("../gungame/bg.png");
+	background-size: cover;
+}
+
+#control-wrapper {
+	width: 300px;
+	height: 420px;
+	position: fixed;
+	left: 0; bottom: 0;
+}
+#sunban-wrapper {
+	width: 800px;
+	margin: 100px auto;
+}
+
+.sunban {
+	height: 150px; width: 825px;
+	margin-bottom: 50px;
+	background: url("../gungame/sunban.png") no-repeat center bottom;
+}
+.sunban li {
+	float: left;
+	width: 125px; height: 125px;
+	cursor: pointer;
+}
+
+.gun {
+	width: 300px; height: 250px;
+	background: url("../gungame/gun.png") no-repeat;
+	cursor: pointer;
+	text-indent: -100px; /* 텍스트 '총' 안보이게 */
+}
+.gun:active {
+	background-position: bottom; 
+}
+
+#msg {
+	position: absolute;
+	border: 10px groove orange;
+	width: 600px; height: 100px;
+	left: 700px; top: 600px;
+	font-family: 'Nanum Pen Script';
+	font-size: 28pt;
+	text-align: center;
+	line-height: 70px; 
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	var jang=new Audio("../gungame/jang.wav");
+	//var count=0;
+	//gun이미지 클릭시
+	$(".gun").click(function(){
+		jang.play();
+		
+		//0~11의 난수 발생
+		var ran=parseInt(Math.random()*12);
+		
+		//해당 인덱스 인형이 이미 숨졌다면 "2번째 인형은 이미 처리되었습니다"
+		if($(".sunban img").eq(ran).is(":hidden")){
+			$("#msg").html((ran+1)+"번째 인형은 이미 처리되었습니다");
+		}
+		//만약 아닐경우 "2번째 인형을 맞췄네요" ...메세지 출력후 hide
+		else{
+			$("#msg").html((ran+1)+"번째 인형을 맞췄네요");
+			$(".sunban img").eq(ran).hide();
+			//count++;
+			//12개를 모두 맞추면 메세지창에 "YOU WIN!!!"출력하기
+			/* if(count==12){
+				$("#msg").html("YOU WIN!!!");
+			} */
+		}
+		//힌트: $(".sunban img").eq(1).is(":hidden") ==> true/false
+		//다른방법으로 하셔도 됩니다.
+		var cnt=0;
+		$(".sunban img").each(function(i, element) {
+			if($(this).is(":hidden")){
+				cnt++;
+			}
+		});
+		if(cnt==12){
+			$("#msg").html("<b>YOU WIN</b>");
+		}
+	});
+	//지폐를 클릭시 해당지폐 사라지게 하면서
+	//인형 12개 모두 보이게 한다
+	//메세지창에 "다시 셋팅완료!!게임시작!!
+	$(".money img").click(function(){
+		$(this).fadeOut('slow');
+		$(".sunban img").fadeIn('slow');
+		//$("#msg").empty();
+		$("#msg").html("다시 세팅완료!! 게임시작!!");
+	});
+});
+</script>
+</head>
+<body>
+<div id="control-wrapper">
+  <div class="gun">총</div>
+  <ul class="money">
+    <li><img alt="" src="../gungame/money.png"></li>
+    <li><img alt="" src="../gungame/money.png"></li>
+    <li><img alt="" src="../gungame/money.png"></li>
+  </ul>
+</div>
+
+<div id="sunban-wrapper">
+  <ul class="sunban">
+    <li><img alt="" src="../gungame/01.png"></li>
+    <li><img alt="" src="../gungame/02.png"></li>
+    <li><img alt="" src="../gungame/03.png"></li>
+    <li><img alt="" src="../gungame/04.png"></li>
+    <li><img alt="" src="../gungame/05.png"></li>
+    <li><img alt="" src="../gungame/06.png"></li>
+  </ul>
+  
+  <ul class="sunban">
+    <li><img alt="" src="../gungame/07.png"></li>
+    <li><img alt="" src="../gungame/08.png"></li>
+    <li><img alt="" src="../gungame/09.png"></li>
+    <li><img alt="" src="../gungame/10.png"></li>
+    <li><img alt="" src="../gungame/11.png"></li>
+    <li><img alt="" src="../gungame/12.png"></li>
+  </ul>
+</div>
+<div id="msg"></div>
+</body>
+</html>

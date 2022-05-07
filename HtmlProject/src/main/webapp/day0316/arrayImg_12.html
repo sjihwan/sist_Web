@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//1부터 10까지를 출력하는데 가로방향 2칸 띄어쓰기, b태그로 출력
+for (var i = 1; i <= 10; i++) {
+	document.write("<b>"+i+"</b>&nbsp;&nbsp;");
+}
+document.write("<br><br>");
+
+var quiz2="<h2>이미지 배열로 출력하기_일련번호!!!</h2>"
+document.write(quiz2);
+//일련번호를 이용하여 이미지를 너비100으로 출력하시오
+for (var i = 1; i <= 3; i++) {
+	var mini="<img src='../img/"+i+".png' width='100'><br><br>";
+	document.write(mini);
+}
+
+//배열선언해서 배열만큼의 이미지 출력
+var food=["김치찌개","부대찌개","순두부","치즈"];
+for (var i = 0; i < food.length; i++) {
+	var f="<img src='../img/"+food[i]+".png' width='100' border='1'>";
+	document.write(f+"&nbsp;&nbsp;");
+}
+</script>
+</body>
+</html>

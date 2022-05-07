@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>랜덤하게 6개 구해서 출력</title>
+<link rel="stylesheet" href="../css/mylotto.css">
+<script type="text/javascript">
+//정답로또
+lotto=[6,12,26,33,38,42]; 
+
+//6개의 랜덤번호가 들어갈 배열변수 mylotto
+mylotto=new Array(6);
+
+window.onload=function(){
+	//로또 출력
+	writeLotto(); 
+
+	//버튼이벤트Refresh
+	document.getElementById("btnRefresh").onclick=function(){
+		//6개의 랜덤번호 변경(다시 뽑기)
+		writeLotto();
+	}
+	
+	//버튼이벤트Select
+	document.getElementById("btnSelect").onclick=function(){
+		s="<b>이번주 로또 정답<b><br>";
+		/* view=document.getElementById("view");
+		view.innerHTML+="요번주 로또 정답: "+lotto; */
+		for (var i=0; i<lotto.length; i++) {
+			s+="["+lotto[i]+"]&nbsp;&nbsp;";
+		}
+		
+		//정답과 비교해서 점수 계산
+		score=0;
+		for (var i=0; i<mylotto.length; i++) {
+			for(var j=0; j<lotto.length; j++){
+				if(mylotto[i]==lotto[j]){
+					score++;
+				}
+			}
+		}
+		s+="<br>맞은 개수: "+score+"개";
+		
+		/* score에 따른 결과주기 */
+		s+="<h3 style='color:red;'>";
+		if(score==6)
+			s+="1등!!";
+		else if(score==5)
+			s+="2등!!";
+		else if(score==4)
+			s+="3등!!";
+		else
+			s+="꽝!!";
+		s+="</h3>";
+		
+		//id가 view인 div에 출력
+		view.innerHTML=s;
+	}
+}
+
+//mylotto 뽑기
+function writeLotto(){
+	for (var i=0; i<mylotto.length; i++) {
+		//1~45난수 반환
+		mylotto[i]=parseInt(Math.random()*45)+1;
+		//중복 제거
+		for(var j=0; j<i; j++) {
+			if(mylotto[i]==mylotto[j]){
+				i--;
+				break;
+			}
+		}
+	}
+	//정렬
+	for (var i=0; i<mylotto.length-1; i++) {
+		for (var j=i+1; j<mylotto.length; j++) {
+			if(mylotto[i]>mylotto[j]){
+				temp=mylotto[i];
+				mylotto[i]=mylotto[j];
+				mylotto[j]=temp;
+			}
+		}
+	}
+	
+	//mylotto를 클래스명이 lotto인 div에 출력
+	//getElemnetsByClassName()으로 클래스명의 요소값 가져오기
+	//변수 lottodiv에 요소값 넣기
+	var lottodiv=document.getElementsByClassName("lotto");
+	for (var i=0; i<lottodiv.length; i++) { //div태그 수(lottodiv.length)만큼 반복
+		lottodiv[i].innerHTML=mylotto[i];
+	}
+}
+</script>
+</head>
+<body>
+<div class="lotto"></div>
+<div class="lotto"></div>
+<div class="lotto"></div>
+<div class="lotto"></div>
+<div class="lotto"></div>
+<div class="lotto"></div>
+
+<hr class="hr" align="left" size="5" color="gray"> <!-- size: height값(두께) -->
+
+<button type="button" class="btna" id="btnRefresh">다른숫자발생</button>
+<button type="button" class="btna" id="btnSelect">최종결정</button>
+
+<br><br>
+
+<div id="view"></div>
+</body>
+</html>

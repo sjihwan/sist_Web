@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+/* div */
+#out {
+	position: absolute;
+	left: 10px;
+	top: 250px;
+	width: 350px;
+	height: 200px;
+	border: 2px solid gray;
+	background: #ffffcc;
+	padding: 20px 20px; /* 단위를 주어야 한다 */
+}
+</style>
+<script type="text/javascript">
+//초기화 함수
+function init() {
+	out.innerHTML="";
+}
+//결과출력 함수
+function disp() {
+	//이름
+	name=document.getElementById("name").value;
+	out.innerHTML+="이름: "+name+"<br>";
+	/* out.innerHTML+="이름: "+frm.name.value+"<br>"; */
+	
+	//비밀번호
+	pass=document.getElementById("pass").value;
+	out.innerHTML+="비밀번호: "+pass+"<br>";
+	/* out.innerHTML+="비밀번호: "+frm.pass.value+"<br>"; */
+	
+	//인기도...프로그래스바
+	document.getElementById("btnprogress").onclick=function(){
+		//30~100사이의 난수값 얻기
+		rnd=parseInt(Math.random()*71)+30;
+		/* pro.value=rnd;
+		prorand.innerHTML=rnd; */
+		
+		//시간차 두고 출력(setInterval)...게이지가 올라감
+		n=0;
+		prorand.innerHTML="";
+		inter=setInterval(function(){
+			n++;
+			pro.value=n;
+			if(n==rnd){ //뽑은 난수랑 n(게이지)이 같을 경우
+				prorand.innerHTML=rnd;
+				clearInterval(inter); //현재타이머(setInterval) 종료
+			}
+		},30); //0.03초마다 함수 호출
+	}
+	
+	//취미...checkbox 다중선택
+	hobbyStr="나의 취미는 ";
+	flag=false;
+	
+	for(var i=0; i<frm.hobby.length; i++){
+		if(frm.hobby[i].checked){
+			flag=true;
+			hobbyStr+=frm.hobby[i].value+" ";
+		}
+	}
+	//하나도 선택 안하면 초기값 그대로(false)
+	if(!flag){
+		hobbyStr="취미가 없습니다<br>";
+	}
+	else{
+		hobbyStr+="입니다<br>";
+	}
+	out.innerHTML+="취미: "+hobbyStr;
+	
+	//거주지...radiobutton 단일선택
+	homeStr="나의 거주지는 ";
+	for(var i=0; i<frm.home.length; i++){
+		if(frm.home[i].checked){
+			homeStr+=frm.home[i].value+" 입니다<br>";
+		}
+	}
+	out.innerHTML+="거주지: "+homeStr;
+	
+	//나이
+	out.innerHTML+="나이: "+frm.age.value+"<br>";
+}
+</script>
+</head>
+<body>
+<form action="#" name="frm">
+  <table border="1" style="width: 400px;">
+    <tr>
+      <th>이름</th>
+      <td>
+      	<!-- placeholder 입력가이드문 -->
+        <input type="text" id="name" size="10" placeholder="이름입력">
+      </td>
+    </tr>
+    <tr>
+      <th>비밀번호</th>
+      <td>
+        <input type="password" id="pass" size="10" placeholder="비밀번호입력">
+      </td>
+    </tr>
+    <tr>
+      <th width="100">취미</th>
+      <td>
+        <input type="checkbox" name="hobby" value="게임">게임
+        <input type="checkbox" name="hobby" value="낚시">낚시
+        <input type="checkbox" name="hobby" value="독서">독서
+        <input type="checkbox" name="hobby" value="음악감상">음악감상
+      </td>
+  	</tr>
+  	<!-- 프로그래스바..랜덤 -->
+  	<tr>
+  	  <th>나의 인기도</th>
+  	  <td>
+  	    <progress id="pro" max="100" value="0"></progress><br>
+  	    <button type="button" id="btnprogress">측정버튼</button>&nbsp;&nbsp;&nbsp;
+  	    <span id="prorand">0</span>
+  	  </td>
+  	</tr>
+  	<tr>
+  	  <th>거주지</th>
+  	  <td>
+  	    <input type="radio" name="home" value="서울" checked="checked">서울
+  	    <input type="radio" name="home" value="경기">경기
+  	    <input type="radio" name="home" value="인천">인천
+  	    <input type="radio" name="home" value="부산">부산
+  	  </td>
+  	</tr>
+  	<tr>
+  	  <th>나이</th>
+  	  <td>
+  	    <select size="1" name="age">
+  	      <option value="20대">20대</option>
+  	      <option value="30대">30대</option>
+  	      <option value="40대">40대</option>
+  	      <option value="50대">50대</option>
+  	      <option value="60대">60대</option>
+  	    </select>
+  	  </td>
+  	</tr>
+  	<tr align="center">
+      <td colspan="2">
+        <input type="button" value="결과출력" onclick="disp()">
+        <input type="reset" value="초기화" onclick="init()">
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- 결과출력div -->
+<div id="out"></div>
+</body>
+</html>

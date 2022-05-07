@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+img {
+	border: 2px groove orange;
+	border-radius: 50px;
+	padding: 10px;
+	cursor: pointer;
+}
+.large {
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	left: 400px;
+	top: 250px;
+	border: 10px inset gold;
+}
+.im {
+	width: 120px;
+	height: 120px;
+	margin-left: 50px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	//첫번째 이미지로 큰 이미지에 일단 오게
+	$("#large").attr("src",$("img:eq(0)").attr("src"));
+	//작은 이미지에 마우스 올리면 45도 로테이트, 벗어나면 원래대로
+	$("img.im").hover(function() {
+		$(this).css("transform","rotate(45deg)");
+	}, function() {
+		$(this).css("transform","rotate(0deg)");
+	});
+	//작은 이미지 누르면 해당 이미지가 라지에 나오도록
+	$("img.im").click(function(){
+		$("#large").attr("src",$(this).attr("src"));
+	});
+});
+</script>
+</head>
+<body>
+<div id="show"></div>
+<img alt="" src="" class="large" id="large">
+<script type="text/javascript">
+// 배열에 이미지 넣기
+var imginfo=[{name:"../image/01.png"},
+	{name:"../image/a02.png"},
+	{name:"../image/c1.png"},
+	{name:"../img/redhair4.PNG"}];
+// each문으로 요소 넣기
+var s="";
+$.each(imginfo,function(i,elt){
+	s+="<img class='im' src='"+elt.name+"'>";
+});
+// id=show에 요소 넣기
+$("#show").html(s);
+</script>
+</body>
+</html>

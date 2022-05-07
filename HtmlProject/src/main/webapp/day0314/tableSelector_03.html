@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.tb1 {
+	width: 500px;
+	border: 5px groove gray;
+}
+.tb2 {
+	width: 400px;
+	border: 5px inset green;
+	border-collapse: collapse; 
+}
+
+/* >: 바로 아래태그(자식태그) 의미 */
+.tb1>thead>tr>th {
+	border: 1px solid gray;
+	background-color: tomato;
+	color: white;
+}
+.tb1>thead>tr {
+	height: 50px;
+	font-size: 1.2em;
+}
+.tb1>tbody>tr {
+	height: 30px;
+}
+.tb1>tbody>tr>td {
+	background-color: #20b2aa;
+	color: white;
+	border: 1px solid gray;
+}
+/* table2 css */
+/* >: 바로 아래태그, 공백: 하위태그 */
+.tb2 th, .tb2 td {
+	border: 1px solid orange;
+}
+.tb2 thead tr {
+	height: 50px;
+	color: red;
+}
+.tb2 img {
+	width: 100px;
+}
+/* td태그의 1번열의 너비조절 */
+.tb2 td:nth-child(1) {
+	width: 70px;
+}
+.tb2 td:nth-child(3) {
+	width: 100px;
+	color: blue;
+	text-align: right;
+}
+/* 테이블이벤트를 css에서 주기도 한다 */
+.tb1 tbody td:hover {
+	background-color: gray;
+	color: black;
+}
+.tb2 thead th:hover {
+	background-color: orange;
+	color: white;
+}
+</style>
+</head>
+<body>
+<table class="tb1">
+  <caption>[표연습1]</caption>
+  <thead>
+    <tr>
+      <th>이름</th><th>나이</th><th>주소</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>김민지</td><td>22세</td><td>서울시 금천구</td>
+    </tr>
+    <tr>
+      <td>김은지</td><td>26세</td><td>서울시 강남구</td>
+    </tr>
+    <tr>
+      <td>이민영</td><td>23세</td><td>서울시 마포구</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<table class="tb2">
+  <caption>[표연습2]</caption>
+  <thead>
+    <tr>
+      <th>꽃이름</th><th>사진</th><th>가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>작약</td>
+      <td><img alt="" src="../img/f1.png"></td>
+      <td>3,500원</td>
+    </tr>
+    <tr>
+      <td>다알리아</td>
+      <td><img alt="" src="../img/f2.png"></td>
+      <td>4,500원</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

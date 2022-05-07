@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+#show{
+	margin-top: 30px;
+	font-family: '카페24 빛나는별';
+	font-size: 1.5em;
+}
+div.box{
+	width: 40px;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 100px; 
+	box-shadow: 5px 5px 5px gray;
+}
+</style>
+</head>
+<body>
+<button type="button" class="btn btn-default" id="btn1">shop DB 데이터 읽어오기_json</button>
+<button type="button" class="btn btn-default" id="btn2">Friend DB 데이터 읽어오기_json</button>
+<div id="show"></div>
+<script type="text/javascript">
+$("#btn1").click(function(){
+	$.ajax({
+		type:"get",
+		url:"shoptojson.jsp",
+		dataType:"json",
+		success:function(data){
+			var s="<table class='table table-bordered' style='width: 700px;'>";	
+			s+="<caption><h4>Json Shop읽기</h4></caption>";
+			s+="<tr bgcolor='pink'>";
+			s+="<th>번호</th><th>상품명</th><th>색상</th><th>가격</th><th>이미지</th>";
+			s+="</tr>";
+			$.each(data,function(i,ele){
+				s+="<tr align='center'>";
+				s+="<td>"+ele.num+"</td>";
+				s+="<td>"+ele.sang+"</td>";
+				s+="<td>"+ele.color+"<br>"
+					+"<div class='box' style='background-color:"
+					+ele.color+";'></div></td>";
+				s+="<td>"+ele.price+"</td>";
+				s+="<td><img src='"+ele.imagename+"' width='60'></td>";
+				s+="</tr>";
+			});
+			
+			s+="</table>";
+			$("#show").html(s);
+		}
+	});
+});
+
+$("#btn2").click(function(){
+	$.ajax({
+		type:"get",
+		url:"friendtojson.jsp",
+		dataType:"json",
+		success:function(data){
+			var s="<table class='table table-bordered' style='width: 700px;'>";	
+			s+="<caption><h4>Json Friend읽기</h4></caption>";
+			s+="<tr bgcolor='orange'>";
+			s+="<th>번호</th><th>이름</th><th>핸드폰</th><th>주소</th><th>가입날짜</th>";
+			s+="</tr>";
+			$.each(data,function(i,ele){
+				s+="<tr align='center'>";
+				s+="<td>"+ele.num+"</td>";
+				s+="<td>"+ele.name+"</td>";
+				s+="<td>"+ele.hp+"</td>";
+				s+="<td>"+ele.addr+"</td>";
+				s+="<td>"+ele.gaip+"</td>";
+				s+="</tr>";
+			});
+			
+			s+="</table>";
+			$("#show").html(s);
+		}
+	});
+});
+</script>
+</body>
+</html>

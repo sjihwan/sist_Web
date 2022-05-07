@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	var a="Hello";
+	var b=100;
+	var c=3.5;
+	var d='30';
+	
+	//typeof:저장된 데이터 타입 알아보기
+	document.write(typeof(a)+"<br>"); //string
+	document.write(typeof(b)+"<br>"); //number
+	document.write(typeof(c)+"<br>"); //number
+	document.write(typeof(d)+"<br>"); //string
+	
+	//숫자로 변환후 계산
+	var sum=parseInt(d)+100;
+	document.write(sum+"<br>");
+	
+	//eval()
+	var s="5*6-3";
+	document.write(s+"<br>");
+	document.write(eval(s)+"<br>");
+	document.write(typeof(eval(s))+"<br>"); //number
+	
+	//isNaN(is Not a Number?):문자일 경우 true,숫자일 경우 false
+	document.write(isNaN(100)+"<br>");
+	document.write(isNaN("hello")+"<br>");
+	document.write(isNaN('a100')+"<br>");
+	
+	//현재날짜출력
+	var date=new Date();
+	document.write("date.getFullYear(): "+date.getFullYear()+"<br>");
+	/* document.write("date.getYear(): "+date.getYear()+"<br>"); //Why 122? minus 1900*/
+	document.write("date.getMonth()+1: "+(date.getMonth()+1)+"<br>");
+	document.write("date.getDate(): "+date.getDate()+"<br>");
+	/* document.write(date.getDay()); */
+	
+	document.write("오늘은 "+date.getFullYear()+"년 "+
+            (date.getMonth()+1)+"월"+date.getDate()+"일 입니다<br>");
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* DOM 객체: Document Object Model */
+/* 
+window.onload=function()을 쓰는 이유
+DOM에서 HTML요소를 추출할때 body보다 위에 있으면
+해석의 오류가 오기도 함
+이 경우, Js문서를 body태그가 끝나기 전으로 옮기면 가독성이 안좋고 불편하므로
+window.onload를 사용해서 페이지가 준비된 상황 이후 호출한다
+*/
+window.onload=function() { //html태그가 끝나면 함수 호출
+document.getElementById('name');
+document.getElementById('name').innerHTML="조아라";
+} 
+</script>
+</head>
+<body>
+<p id="name">임현정</p>
+</body>
+</html>

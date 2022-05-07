@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style type="text/css">
+#msg {
+	font-size: 2em;
+	position: absolute;
+	left: 100px;
+	top: 150px;
+}
+#img {
+	position: absolute;
+	left: 500px;
+	top: 150px;
+}
+
+button {
+	width: 100px; height: 30px;
+}
+</style>
+</head>
+<body>
+<button type="button" id="btn1">Hide</button>
+<button type="button" id="btn2">Show</button>
+<button type="button" id="btn3">Toggle</button>
+<br>
+<button type="button" id="btn4">SlideUp</button>
+<button type="button" id="btn5">SlideDown</button>
+<button type="button" id="btn6">SlideToggle</button>
+<br>
+<button type="button" id="btn7">FadeOut</button>
+<button type="button" id="btn8">FadeIn</button>
+<button type="button" id="btn9">FadeToggle</button>
+<button type="button" id="btn10">FadeTo</button>
+<br>
+
+<div id="msg">Have a Nice Day!!!</div>
+<img id="img" alt="" src="../image/c1.png">
+
+<script type="text/javascript">
+$("#btn1").click(function() {
+	$("#img").hide();
+	$("#msg").hide();
+});
+$("#btn2").click(function() {
+	$("#img").show('slow');
+	$("#msg").show('slow');
+});
+$("#btn3").click(function() {
+	$("#img").toggle();
+	$("#msg").toggle();
+});
+
+$("#btn4").click(function() {
+	$("#img").slideUp();
+	$("#msg").slideUp();
+});
+$("#btn5").click(function() {
+	$("#img").slideDown();
+	$("#msg").slideDown();
+});
+$("#btn6").click(function() {
+	$("#img").slideToggle();
+	$("#msg").slideToggle();
+});
+
+$("#btn7").click(function() {
+	$("#img").fadeOut();
+	$("#msg").fadeOut();
+});
+$("#btn8").click(function() {
+	$("#img").fadeIn();
+	$("#msg").fadeIn();
+});
+$("#btn9").click(function() {
+	$("#img").fadeToggle();
+	$("#msg").fadeToggle();
+});
+$("#btn10").click(function() {
+	$("#img").fadeTo(3000, 0.5, function(){
+		$("img").css({
+			"border":"10px dotted orange",
+			"opacity":"1"
+		});
+	});
+	$("#msg").fadeTo(3000, 0.25, function(){
+		$(this).css("opacity", "1");
+	});
+});
+</script>
+
+</body>
+</html>

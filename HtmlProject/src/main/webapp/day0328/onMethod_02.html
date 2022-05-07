@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//정적클릭이벤트...추가된것에는 이벤트가 없다
+	/* $("#myland").children().click(function(){
+		$(this).remove();
+	});
+	$("#mylang").append("<li>Spring</li>"); */
+	
+	//동적클릭이벤트...앞으로 만들어질 것들도 이벤트를 줄 수 있음
+	$("#mylang").on("click", "li", function(){
+		$(this).remove();
+	});
+	$("#mylang").append("<li>Spring</li>");
+});
+</script>
+</head>
+<body>
+<ul id="mylang">
+  <li>Java</li>
+  <li>Oracle</li>
+  <li>Html</li>
+  <li>JQuery</li>
+</ul>
+</body>
+</html>

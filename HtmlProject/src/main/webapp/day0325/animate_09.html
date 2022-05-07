@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<button type="button">애니메이션#1</button>
+<button type="button">애니메이션#2</button>
+<div id="box1"></div>
+<script type="text/javascript">
+$("#box1").css({
+	"width":"100px",
+	"height":"100px",
+	"border":"1px solid orange"
+});
+//애니메이션#1 버튼 
+$("button:eq(0)").click(function(){
+	$("#box1").animate({width:'+=100px','borderWidth':'20px',
+		opacity:'0.2'},3000);
+});
+//애니메이션#2
+$("button:eq(1)").click(function(){
+	$("#box1").animate({width:'-=100px','borderWidth':'1px',
+		opacity:'1'},3000);
+});
+</script>
+<hr>
+<div class="box2"></div>
+<div class="box2"></div>
+<div class="box2"></div>
+<div class="box2"></div>
+<div class="box2"></div>
+<div class="box2"></div>
+<script type="text/javascript">
+$(".box2").css({
+	position: 'relative',
+	width: "60px",
+	height: "60px",
+	backgroundColor: "tomato",
+	marginTop: "15px"
+});
+$(".box2").each(function(i,elt){
+	// 0.5초마다 차례로
+	$(this).delay(i*500).animate({left:'+=300px'}, 'slow');
+});
+</script>
+<hr>
+<img alt="" src="../image/c2.png" id="img3">
+<script type="text/javascript">
+$("#img3").slideUp(2000).delay(3000).slideDown(2000); // 사라졌다 3초후 나타난다
+</script>
+</body>
+</html>

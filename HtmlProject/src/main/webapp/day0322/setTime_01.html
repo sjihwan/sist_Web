@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#time {
+	margin-left: 100px;
+	font-size: 2em;
+	font-weight: bold;
+	font-family: '카페24 빛나는별';
+}
+#myimg {
+	position: absolute;
+}
+</style>
+<script type="text/javascript">
+var xpos=200;
+var ypos=350;
+var myimg;
+
+window.onload=function(){
+	writeTime();
+	
+	//1초마다 현재시간 반복 출력(호출)
+	setInterval(function() {
+		writeTime();
+	},1000)
+	
+	//이미지 딱한번 위치변경
+	myimg = document.getElementById("myimg");
+	//5초뒤 이동
+	setTimeout(function() {
+		myimg.style.left=xpos+"px";
+		myimg.style.top=ypos+"px";
+	},5000);
+}
+
+function writeTime(){
+	date = new Date(); //날짜와 시간 객체
+	
+	//시,분,초
+	h = date.getHours();
+	m = date.getMinutes();
+	s = date.getSeconds();
+	
+	//time = h+":"+m+":"+s;
+	time = h + ":" + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+	
+	document.getElementById("time").innerHTML=time;
+}
+</script>
+</head>
+<body>
+<h2>setTimeOut과 setInterval에 대한 공부</h2>
+
+<div id="time"></div>
+
+<img alt="" src="../image/c5.png" id="myimg" width="100">
+</body>
+</html>
